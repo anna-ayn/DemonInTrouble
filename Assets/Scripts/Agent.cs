@@ -12,8 +12,7 @@ public class Agent : MonoBehaviour
         kinematic.position = transform.position;
         // transform.eulerAngles.z gives the z-axis roation in euler angles
         // then we convert it in radians
-        kinematic.orientation = transform.eulerAngles.z * Mathf.Deg2Rad;
-
+        kinematic.orientation = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
     }
 
     public void Initialize()

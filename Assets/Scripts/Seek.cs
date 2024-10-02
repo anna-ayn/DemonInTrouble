@@ -17,7 +17,7 @@ public class Seek : MonoBehaviour
         target.Initialize();
     }
 
-    SteeringOutput getSteering() {
+    protected SteeringOutput getSteering() {
         SteeringOutput result = new SteeringOutput();
 
         // Get the direction to the target

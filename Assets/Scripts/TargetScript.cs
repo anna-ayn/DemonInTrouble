@@ -5,20 +5,24 @@ using UnityEngine;
 public class TargetScript : MonoBehaviour
 {
     public Agent target;
-    public float speed;
-    public Animator anim;
+    public float maxSpeed;
 
     private void Update()
     {
-        Vector3 move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
-        transform.Translate(move.normalized * speed * Time.deltaTime);
+        KinematicSteeringOutput move = new KinematicSteeringOutput();
+        move.velocity = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
 
-        target.updateKinematicWithTransform();
+        if (move.velocity != Vector3.zero) {
+            move.velocity.Normalize();
+            move.velocity *= maxSpeed;
+            move.rotation = 0;
 
-        anim.SetFloat("horizontal", move.x);
-        anim.SetFloat("vertical", move.y);
+            target.kinematic.velocity = move.velocity;
+            target.doUpdate();
+            target.kinematic.orientation = target.kinematic.newOrientation(transform.rotation.eulerAngles.z, move.velocity);
 
-        if (move.x < 0.0f) transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-        else if (move.x > 0.0f) transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            
+        }
+
     }
 }

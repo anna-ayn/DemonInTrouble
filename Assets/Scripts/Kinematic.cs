@@ -53,5 +53,4 @@ public class Kinematic : MonoBehaviour
             velocity *= maxSpeed;
         }
     }
-    
 }
