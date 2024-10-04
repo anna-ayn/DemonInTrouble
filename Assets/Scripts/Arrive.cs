@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrive : MonoBehaviour
+[System.Serializable]
+public class Arrive
 {
-    public Agent character;
-    public Agent target;
+    [System.NonSerialized] public Kinematic character;
+    [System.NonSerialized] public Kinematic target;
+
     public float maxAcceleration;
     public float maxSpeed;
 
@@ -16,17 +18,11 @@ public class Arrive : MonoBehaviour
     // the time over which to achieve target speed
     public float timeToTarget = 0.1f;
 
-    private void Awake()
-    {
-        character.Initialize();
-        target.Initialize();
-    }
-
-    SteeringOutput getSteering() {
+    public virtual SteeringOutput getSteering() {
         SteeringOutput result = new SteeringOutput();
 
         // Get the direction to the target
-        Vector3 direction = target.kinematic.position - character.kinematic.position;
+        Vector3 direction = target.position - character.position;
         float distance = direction.magnitude;
 
         // Check if we are there, return no steering
@@ -49,7 +45,7 @@ public class Arrive : MonoBehaviour
         targetVelocity *= targetSpeed;
 
         // acceleration tries to get to the target velocity
-        result.linear = targetVelocity - character.kinematic.velocity;
+        result.linear = targetVelocity - character.velocity;
         result.linear /= timeToTarget;
 
         // check if the acceleration is too fast
@@ -60,16 +56,5 @@ public class Arrive : MonoBehaviour
 
         result.angular = 0;
         return result;
-    }
-    
-    // Update is called once per frame
-    void Update()
-    { 
-        var steering = getSteering();
-        if (steering != null) {
-            character.steering = getSteering();
-            character.kinematic.updateOrientationWithCurrentVelocity();
-            character.doUpdate(maxSpeed);
-        }
     }
 }

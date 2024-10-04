@@ -2,29 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seek : MonoBehaviour
+[System.Serializable]
+public class Seek
 {
-    public Agent character;
-    public Agent target;
+    [System.NonSerialized]
+    public Kinematic character;
+    
+    [System.NonSerialized]
+    public Kinematic target;
 
-    public float maxAcceleration;
+    public float maxAcceleration;    
     public float maxSpeed;
-    public bool escape;
 
-    private void Awake()
-    {
-        character.Initialize();
-        target.Initialize();
-    }
+    protected Vector3 futureTargetPosition = Vector3.zero;
 
-    protected SteeringOutput getSteering() {
+    public virtual SteeringOutput getSteering() {
         SteeringOutput result = new SteeringOutput();
 
         // Get the direction to the target
-        if (escape)
-            result.linear = character.kinematic.position - target.kinematic.position;
-        else
-            result.linear = target.kinematic.position - character.kinematic.position;
+        result.linear = target.position - character.position;
+        result.linear += futureTargetPosition;
 
         // Give full acceleration along this direction
         result.linear.Normalize();
@@ -32,11 +29,5 @@ public class Seek : MonoBehaviour
 
         result.angular = 0;
         return result;
-    }
-
-    private void Update() {
-        character.steering = getSteering();
-        character.kinematic.updateOrientationWithCurrentVelocity();
-        character.doUpdate(maxSpeed);
     }
 }

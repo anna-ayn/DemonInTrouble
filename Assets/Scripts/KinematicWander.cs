@@ -30,7 +30,7 @@ public class KWander : MonoBehaviour
         // Get velocity from vector form of orientation
         float angle = character.kinematic.orientation;
         Vector3 vec = new Vector3(0.0f, 0.0f, 0.0f);
-        vec.x = - (float) -Mathf.Sin(angle);
+        vec.x = - (float) Mathf.Sin(angle);
         vec.y = (float) Mathf.Cos(angle);
         result.velocity = maxSpeed * vec;
 

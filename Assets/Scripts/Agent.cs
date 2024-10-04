@@ -7,7 +7,9 @@ public class Agent : MonoBehaviour
     public Kinematic kinematic;
     public SteeringOutput steering;
 
-    public void updateKinematicWithTransform() {
+
+    public void Initialize()
+    {
         // get the position with transform.position
         kinematic.position = transform.position;
         // transform.eulerAngles.z gives the z-axis roation in euler angles
@@ -15,12 +17,7 @@ public class Agent : MonoBehaviour
         kinematic.orientation = transform.rotation.eulerAngles.z * Mathf.Deg2Rad;
     }
 
-    public void Initialize()
-    {
-        updateKinematicWithTransform();
-    }
-
-    public void updateTransform()
+    private void updateTransform()
     {
         // Update transform.position and transform.rotation after updating the kinematic
         transform.position = kinematic.position;
@@ -37,6 +34,12 @@ public class Agent : MonoBehaviour
     public void doUpdate(float maxSpeed) 
     {
         kinematic.doUpdate(steering, maxSpeed, Time.deltaTime);
+        updateTransform();
+    }
+
+    public void doUpdateWander(float maxSpeed)
+    {
+        kinematic.doUpdateWander(steering, maxSpeed, Time.deltaTime);
         updateTransform();
     }
 

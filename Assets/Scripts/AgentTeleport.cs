@@ -28,8 +28,6 @@ public class AgentTeleport : MonoBehaviour
         {
             TeleportToTop();
         }
-
-        agent.updateTransform();
     }
 
     void TeleportToLeft()

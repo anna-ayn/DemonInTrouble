@@ -2,43 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Pursue : Seek
 {
-    // the maximum prediction time
+    // The maximum prediction time.
     public float maxPrediction;
 
-    //  # ...Other data is derived from the superclass...
+    // ...Other data is derived from the superclass...
 
-    SteeringOutput getSteeringPursue() {
+    public override SteeringOutput getSteering() {
         // 1. calculate the target to delegate to seek
         // work out the distance to target
-        Vector3 direction = target.kinematic.position - character.kinematic.position;
-
+        Vector3 direction = target.position - character.position;
         float distance = direction.magnitude;
 
         // work out our current speed
-        float speed = character.kinematic.velocity.magnitude;
+        float speed = character.velocity.magnitude;
 
         float prediction;
         // check if speed gives a reasonable prediction time
-        if (speed <= distance / maxPrediction) {
+        if (speed <= distance / maxPrediction)
             prediction = maxPrediction;
-        }
-        // otherwise calculate the prediction time
-        else {
+        else //  # otherwise calculate the prediction time.
             prediction = distance / speed;
-        }
 
         // put the target together
-        target.kinematic.position += target.kinematic.velocity * prediction;
+        futureTargetPosition = target.velocity * prediction;
 
-        // 2. Delegate to seek
+        // 2. delegate to seek
         return base.getSteering();
-    }
-
-    private void Update() {
-        character.steering = getSteeringPursue();
-        character.kinematic.updateOrientationWithCurrentVelocity();
-        character.doUpdate(maxSpeed);
     }
 }

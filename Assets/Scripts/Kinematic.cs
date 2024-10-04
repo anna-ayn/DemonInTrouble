@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Kinematic : MonoBehaviour
+public class Kinematic 
 {
     public Vector3 position;
     public float orientation; // angle from z-axis
@@ -52,5 +52,22 @@ public class Kinematic : MonoBehaviour
             velocity.Normalize();
             velocity *= maxSpeed;
         }
+    }
+
+    public void doUpdateWander(SteeringOutput steering, float maxSpeed, float time) 
+    {
+        position += velocity * time;
+        Debug.Log("Position: " + position);
+        orientation += steering.angular * Time.deltaTime;
+
+        velocity += steering.linear * Time.deltaTime;
+        rotation += steering.angular * Time.deltaTime;
+
+        if (velocity.magnitude > maxSpeed)
+        {
+            velocity.Normalize();
+            velocity *= maxSpeed;
+        }
+
     }
 }

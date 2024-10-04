@@ -132,18 +132,21 @@ GameObject:
   m_Component:
   - component: {fileID: 396632618}
   - component: {fileID: 396632617}
-  - component: {fileID: 396632620}
   - component: {fileID: 396632623}
+  - component: {fileID: 396632624}
   - component: {fileID: 396632619}
   - component: {fileID: 396632621}
   - component: {fileID: 396632622}
-  - component: {fileID: 396632624}
   - component: {fileID: 396632625}
+  - component: {fileID: 396632629}
   - component: {fileID: 396632626}
   - component: {fileID: 396632627}
   - component: {fileID: 396632628}
-  - component: {fileID: 396632629}
   - component: {fileID: 396632630}
+  - component: {fileID: 396632631}
+  - component: {fileID: 396632632}
+  - component: {fileID: 396632633}
+  - component: {fileID: 396632634}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -234,22 +237,6 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
---- !u!114 &396632620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396632616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdcc54f831fad04aaab8eaf7a5186d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  orientation: 0
-  velocity: {x: 0, y: 0, z: 0}
-  rotation: 0
 --- !u!114 &396632621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
-  maxSpeed: 3
+  maxSpeed: 2
   maxRotation: 10
 --- !u!114 &396632623
 MonoBehaviour:
@@ -294,7 +281,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37af18af588a7a3488198defceb797fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinematic: {fileID: 396632620}
+  kinematic:
+    position: {x: 0, y: 0, z: 0}
+    orientation: 0
+    velocity: {x: 0, y: 0, z: 0}
+    rotation: 0
   steering:
     linear: {x: 0, y: 0, z: 0}
     angular: 0
@@ -320,14 +311,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19ac377f5f3749946aad43cae25661d2, type: 3}
+  m_Script: {fileID: 11500000, guid: 73dfe8dddc08a59458fe941cbd8496bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAcceleration: 10
-  maxSpeed: 5
-  escape: 0
+  algorithm:
+    maxAcceleration: 10
+    maxSpeed: 5
 --- !u!114 &396632626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,16 +328,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eb31ea492b2c43b35e5380e3ed535, type: 3}
+  m_Script: {fileID: 11500000, guid: ce2659a5c03894143aac986296bce1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAcceleration: 10
-  maxSpeed: 5
-  targetRadius: 2
-  slowRadius: 5
-  timeToTarget: 0.1
+  algorithm:
+    maxAcceleration: 10
+    maxSpeed: 5
+    targetRadius: 1.5
+    slowRadius: 3
+    timeToTarget: 0.1
 --- !u!114 &396632627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,16 +348,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edb3d2e183a902842b8dba2e842abee4, type: 3}
+  m_Script: {fileID: 11500000, guid: d16e20691e4b62e44bb2bc4daabd79f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAngularAcceleration: 3
-  maxRotation: 10
-  targetRadius: 1
-  slowRadius: 10
-  timeToTarget: 0.1
+  algorithm:
+    maxAngularAcceleration: 8
+    maxRotation: 45
+    targetRadius: 1
+    slowRadius: 3
+    timeToTarget: 0.1
 --- !u!114 &396632628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,14 +368,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7574eb79b141b49b7a169d11e7d7f0, type: 3}
+  m_Script: {fileID: 11500000, guid: daf36f5e1318e9d45910e421d55fbdd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAcceleration: 5
-  timeToTarget: 0.1
-  maxSpeed: 2
+  algorithm:
+    maxAcceleration: 10
+    timeToTarget: 0.1
+    maxSpeed: 5
 --- !u!114 &396632629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,15 +386,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62cf598cbc865ff4f97ecdee9d7e1d25, type: 3}
+  m_Script: {fileID: 11500000, guid: 941e71dd374d0fc4e853f7f746458b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAcceleration: 2
-  maxSpeed: 5
-  escape: 0
-  maxPrediction: 10
+  algorithm:
+    maxAcceleration: 5
+    maxSpeed: 3
 --- !u!114 &396632630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,16 +403,98 @@ MonoBehaviour:
   m_GameObject: {fileID: 396632616}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3287bd047bd12914195da916ccbe1583, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c34bf1ad8765c24cb969702013495a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   target: {fileID: 817006703}
-  maxAngularAcceleration: 7
-  maxRotation: 360
-  targetRadius: 1
-  slowRadius: 3
-  timeToTarget: 0.1
+  algorithm:
+    maxAcceleration: 10
+    maxSpeed: 7
+    maxPrediction: 10
+--- !u!114 &396632631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396632616}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e722b59366161bb49a1e11994b962e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 396632623}
+  target: {fileID: 817006703}
+  algorithm:
+    maxAcceleration: 10
+    maxSpeed: 7
+    maxPrediction: 10
+--- !u!114 &396632632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396632616}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e701486c0085d1a4590f88038973195e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 396632623}
+  target: {fileID: 817006703}
+  algorithm:
+    maxAngularAcceleration: 8
+    maxRotation: 45
+    targetRadius: 1
+    slowRadius: 3
+    timeToTarget: 0.1
+--- !u!114 &396632633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396632616}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 400232271f7390a4e8047c483ad692ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 396632623}
+  target: {fileID: 817006703}
+  algorithm:
+    maxAngularAcceleration: 8
+    maxRotation: 45
+    targetRadius: 1
+    slowRadius: 3
+    timeToTarget: 0.1
+--- !u!114 &396632634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396632616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40c51647315fbca44aa511c1cd45f10a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 396632623}
+  target: {fileID: 817006703}
+  algorithm:
+    maxAngularAcceleration: 10
+    maxRotation: 10
+    targetRadius: 3
+    slowRadius: 5
+    timeToTarget: 0.1
+    wanderOffset: 10
+    wanderRadius: 5
+    wanderRate: 10
+    maxAcceleration: 5
+    maxSpeed: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,7 +598,6 @@ GameObject:
   - component: {fileID: 817006707}
   - component: {fileID: 817006706}
   - component: {fileID: 817006705}
-  - component: {fileID: 817006704}
   - component: {fileID: 817006703}
   - component: {fileID: 817006708}
   m_Layer: 0
@@ -545,26 +619,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37af18af588a7a3488198defceb797fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinematic: {fileID: 817006704}
+  kinematic:
+    position: {x: 0, y: 0, z: 0}
+    orientation: 0
+    velocity: {x: 0, y: 0, z: 0}
+    rotation: 0
   steering:
     linear: {x: 0, y: 0, z: 0}
     angular: 0
---- !u!114 &817006704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817006702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdcc54f831fad04aaab8eaf7a5186d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  orientation: 0
-  velocity: {x: 0, y: 0, z: 0}
-  rotation: 0
 --- !u!114 &817006705
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Align : MonoBehaviour
+[System.Serializable]
+public class Align
 {
-    public Agent character;
-    public Agent target;
+    [System.NonSerialized]
+    public Kinematic character;
+
+    [System.NonSerialized]
+    public Kinematic target;
 
     public float maxAngularAcceleration;
     public float maxRotation;
@@ -16,12 +20,8 @@ public class Align : MonoBehaviour
     public float slowRadius;
     // the time over which to achieve target speed
     public float timeToTarget = 0.1f;
-    
-    private void Awake()
-    {
-        character.Initialize();
-        target.Initialize();
-    }
+
+    protected float orientationFace = 0;
 
     public float mapToRange(float angle) {
         if (angle > 180)
@@ -31,13 +31,16 @@ public class Align : MonoBehaviour
         return angle;
     }
 
-
-    protected SteeringOutput getSteering() {
+    public virtual SteeringOutput getSteering() {
         SteeringOutput result = new SteeringOutput();
 
-
+        float rotation;
         // get the naive direction to the target
-        float rotation = (target.kinematic.orientation - character.kinematic.orientation) * Mathf.Rad2Deg;
+        if (orientationFace == 0) 
+            rotation = (target.orientation - character.orientation) * Mathf.Rad2Deg;
+        else 
+            rotation = (orientationFace - character.orientation) * Mathf.Rad2Deg;
+
         // map the result to the (-pi, pi) interval
         rotation = mapToRange(rotation);
         float rotationSize = Mathf.Abs(rotation);
@@ -62,7 +65,7 @@ public class Align : MonoBehaviour
         }
 
         // acceleration tries to get to the target rotation
-        result.angular = targetRotation - character.kinematic.rotation;
+        result.angular = targetRotation - character.rotation;
         result.angular /= timeToTarget;
 
         // check if the acceleration is too great
@@ -74,17 +77,6 @@ public class Align : MonoBehaviour
 
         result.linear = Vector3.zero;
         return result;
-    }
-            
-    // Update is called once per frame
-    void Update()
-    { 
-        var steering = getSteering();
-        if (steering != null) {
-            character.steering = getSteering();
-            character.transform.rotation = Quaternion.Euler(0, 0, character.kinematic.orientation * Mathf.Rad2Deg);
-            character.kinematic.orientation += steering.angular * Time.deltaTime;
-        }
     }
 
 }
