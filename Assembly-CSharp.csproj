@@ -63,22 +63,36 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.47f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\LookWhereYoureGoing.cs" />
+    <Compile Include="Assets\Scripts\Flee.cs" />
+    <Compile Include="Assets\Scripts\EvadeMain.cs" />
     <Compile Include="Assets\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
+    <Compile Include="Assets\Scripts\VelocityMatchMain.cs" />
     <Compile Include="Assets\Scripts\KinematicSteeringOutput.cs" />
+    <Compile Include="Assets\Scripts\FaceMain.cs" />
+    <Compile Include="Assets\Scripts\AlignMain.cs" />
+    <Compile Include="Assets\Scripts\WanderMain.cs" />
     <Compile Include="Assets\Scripts\KinematicArrive.cs" />
+    <Compile Include="Assets\Scripts\ArriveMain.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\AgentTeleport.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
     <Compile Include="Assets\Scripts\CharacterScript.cs" />
+    <Compile Include="Assets\Scripts\Wander.cs" />
     <Compile Include="Assets\Scripts\KinematicWander.cs" />
     <Compile Include="Assets\Scripts\Face.cs" />
     <Compile Include="Assets\Scripts\Arrive.cs" />
     <Compile Include="Assets\Scripts\SteeringOutput.cs" />
+    <Compile Include="Assets\Scripts\LookWhereYoureGoingMain.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\VelocityMatch.cs" />
+    <Compile Include="Assets\Scripts\Evade.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
+    <Compile Include="Assets\Scripts\FleeMain.cs" />
+    <Compile Include="Assets\Scripts\SeekMain.cs" />
+    <Compile Include="Assets\Scripts\PursueMain.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UnityAssetStoreExports\Witchery AssetPack\Readme.txt" />
