@@ -228,6 +228,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &175456306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,6 +651,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &195620225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,6 +1342,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &396632635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,6 +1589,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &738401359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2226,6 +2230,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &1276628373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2648,6 +2653,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &1602907933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3070,6 +3076,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &1623054399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,6 +3499,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &1816363025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3914,6 +3922,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &2017621914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4336,6 +4345,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 2
+    maxSpeed: 2
 --- !u!114 &2032255712
 MonoBehaviour:
   m_ObjectHideFlags: 0
