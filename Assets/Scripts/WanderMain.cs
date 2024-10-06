@@ -19,10 +19,7 @@ public class WanderMain : MonoBehaviour
         algorithm.character = character.kinematic;
         algorithm.target = target.kinematic;
 
-        var steering = algorithm.getSteering();
-        if (steering != null) {
-            character.steering = steering;
-            character.doUpdateWander(algorithm.maxSpeed);
-        }
+        character.steering = algorithm.getSteeringWander();
+        character.doUpdateWander(algorithm.maxSpeed);
     }
 }

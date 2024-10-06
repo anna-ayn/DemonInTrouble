@@ -46,7 +46,9 @@ public class Align
         float rotationSize = Mathf.Abs(rotation);
 
         if (rotationSize < targetRadius) {
-            return null;
+            result.linear = Vector3.zero;
+            result.angular = 0.0f;
+            return result;
         }
 
         float targetRotation = 0;

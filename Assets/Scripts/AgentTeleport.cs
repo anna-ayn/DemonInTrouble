@@ -5,7 +5,7 @@ using UnityEngine;
 public class AgentTeleport : MonoBehaviour
 {
     public Agent agent;
-    private float boundaryX = 9f;
+    private float boundaryX = 11f;
     private float boundaryY = 5f;
 
     void Update()

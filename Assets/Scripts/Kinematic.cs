@@ -57,17 +57,15 @@ public class Kinematic
     public void doUpdateWander(SteeringOutput steering, float maxSpeed, float time) 
     {
         position += velocity * time;
-        Debug.Log("Position: " + position);
-        orientation += steering.angular * Time.deltaTime;
+        orientation += steering.angular * time;
 
-        velocity += steering.linear * Time.deltaTime;
-        rotation += steering.angular * Time.deltaTime;
+        velocity += steering.linear * time;
+        rotation += steering.angular * time;
 
         if (velocity.magnitude > maxSpeed)
         {
             velocity.Normalize();
             velocity *= maxSpeed;
         }
-
     }
 }
