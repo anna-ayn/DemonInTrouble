@@ -53,19 +53,4 @@ public class Kinematic
             velocity *= maxSpeed;
         }
     }
-
-    public void doUpdateWander(SteeringOutput steering, float maxSpeed, float time) 
-    {
-        position += velocity * time;
-        orientation += steering.angular * time;
-
-        velocity += steering.linear * time;
-        rotation += steering.angular * time;
-
-        if (velocity.magnitude > maxSpeed)
-        {
-            velocity.Normalize();
-            velocity *= maxSpeed;
-        }
-    }
 }

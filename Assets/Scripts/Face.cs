@@ -18,9 +18,14 @@ public class Face : Align
             direction = wanderTarget - character.position;
 
         // Check for a zero direction, and make no change if so
-        if (direction.magnitude > 0) {
+        if (direction.magnitude != 0) {
             // 2. delegate to align
             orientationFace = Mathf.Atan2(-direction.x, direction.y);
+        } else {
+            SteeringOutput result = new SteeringOutput();
+            result.linear = Vector3.zero;
+            result.angular = 0.0f;
+            return result;
         }
 
         return base.getSteering();

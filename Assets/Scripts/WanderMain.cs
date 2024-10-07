@@ -20,6 +20,6 @@ public class WanderMain : MonoBehaviour
         algorithm.target = target.kinematic;
 
         character.steering = algorithm.getSteeringWander();
-        character.doUpdateWander(algorithm.maxSpeed);
+        character.doUpdate(algorithm.maxSpeed);
     }
 }

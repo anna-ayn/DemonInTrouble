@@ -20,7 +20,6 @@ public class EvadeMain : MonoBehaviour
         algorithm.target = target.kinematic;
 
         character.steering = algorithm.getSteering();
-        character.kinematic.updateOrientationWithCurrentVelocity();
         character.doUpdate(algorithm.maxSpeed);
     }
 }

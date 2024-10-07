@@ -40,7 +40,7 @@ public class Align
             rotation = (target.orientation - character.orientation) * Mathf.Rad2Deg;
         else 
             rotation = (orientationFace - character.orientation) * Mathf.Rad2Deg;
-
+            
         // map the result to the (-pi, pi) interval
         rotation = mapToRange(rotation);
         float rotationSize = Mathf.Abs(rotation);
@@ -48,6 +48,7 @@ public class Align
         if (rotationSize < targetRadius) {
             result.linear = Vector3.zero;
             result.angular = 0.0f;
+            character.rotation = 0.0f;
             return result;
         }
 
@@ -62,9 +63,7 @@ public class Align
         }
 
         // the final target rotation combines speed (already in the variable) and direction
-        if (rotationSize > 0) { // prevent division by zero
-            targetRotation *= rotation / rotationSize;
-        }
+        targetRotation *= rotation / rotationSize;
 
         // acceleration tries to get to the target rotation
         result.angular = targetRotation - character.rotation;

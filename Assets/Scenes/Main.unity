@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 396632623}
   maxSpeed: 2
-  maxRotation: 10
+  maxRotation: 45
 --- !u!114 &396632623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396632616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d16e20691e4b62e44bb2bc4daabd79f9, type: 3}
   m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396632616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: daf36f5e1318e9d45910e421d55fbdd8, type: 3}
   m_Name: 
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396632616}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40c51647315fbca44aa511c1cd45f10a, type: 3}
   m_Name: 
@@ -495,6 +495,7 @@ MonoBehaviour:
     wanderRadius: 5
     wanderRate: 10
     maxAcceleration: 5
+    maxSpeed: 2
 --- !u!114 &396632635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396632616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6feb1b3f9af370e40ab5f05656d72588, type: 3}
   m_Name: 

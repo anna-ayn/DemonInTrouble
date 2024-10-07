@@ -49,7 +49,7 @@ public class Wander : Face
         wanderTarget += wanderRadius * AsVector(targetOrientation);
 
         // 2. delegate to seek
-        result =  base.getSteeringFace();
+        result = getSteeringFace();
 
         // 3. Now set the linear acceleration to be at full
         // acceleration in the direction of the orientation

@@ -36,11 +36,4 @@ public class Agent : MonoBehaviour
         kinematic.doUpdate(steering, maxSpeed, Time.deltaTime);
         updateTransform();
     }
-
-    public void doUpdateWander(float maxSpeed)
-    {
-        kinematic.doUpdateWander(steering, maxSpeed, Time.deltaTime);
-        updateTransform();
-    }
-
 }
