@@ -27,7 +27,7 @@ public class KinematicSeek : MonoBehaviour
             direction = target.kinematic.position - character.kinematic.position;
 
         // Check if the distance is greater than the maximum allowed distance
-        if (direction.magnitude > maxDistance)
+        if (escape && direction.magnitude > maxDistance)
         {
             // Calculate the position at the maximum allowed distance in the direction of the target
             Vector3 maxDistancePosition = character.kinematic.position + direction.normalized * maxDistance;

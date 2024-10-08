@@ -52,5 +52,5 @@ public class Kinematic
             velocity.Normalize();
             velocity *= maxSpeed;
         }
-    }
+    }  
 }

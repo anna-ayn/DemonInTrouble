@@ -266,6 +266,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &108205230
 MonoBehaviour:
@@ -360,6 +361,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &108205235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +427,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &108205239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,6 +663,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &129319385
 MonoBehaviour:
@@ -754,6 +758,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &129319390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,6 +824,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &129319394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +921,134 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.51, y: -1.8, z: 0}
   m_LocalScale: {x: 0.07114603, y: 0.059092425, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &231556725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 231556727}
+  - component: {fileID: 231556726}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &231556726
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231556725}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &231556727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231556725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.82789695, y: 0.0637543, z: -9.929304}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1063,6 +1197,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &358818360
 MonoBehaviour:
@@ -1157,6 +1292,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &358818365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,6 +1358,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &358818369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1438,6 +1575,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &396632621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1595,6 +1733,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &396632630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,6 +1769,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &396632632
 MonoBehaviour:
@@ -2179,6 +2319,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1041758741
 MonoBehaviour:
@@ -2273,6 +2414,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1041758746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2338,6 +2480,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1041758750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,6 +2725,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1199273365
 MonoBehaviour:
@@ -2676,6 +2820,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1199273370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2886,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1199273374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2985,6 +3131,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1258667125
 MonoBehaviour:
@@ -3079,6 +3226,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1258667130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3144,6 +3292,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1258667134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3388,6 +3537,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1461932816
 MonoBehaviour:
@@ -3482,6 +3632,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1461932821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3547,6 +3698,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1461932825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3791,6 +3943,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1768908142
 MonoBehaviour:
@@ -3885,6 +4038,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1768908147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3950,6 +4104,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1768908151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4194,6 +4349,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 10
     maxSpeed: 7
+    maxDistance: 0
     maxPrediction: 10
 --- !u!114 &1793924976
 MonoBehaviour:
@@ -4288,6 +4444,7 @@ MonoBehaviour:
   algorithm:
     maxAcceleration: 5
     maxSpeed: 3
+    maxDistance: 0
 --- !u!114 &1793924981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4353,6 +4510,7 @@ MonoBehaviour:
   target: {fileID: 817006703}
   maxSpeed: 3
   escape: 0
+  maxDistance: 0
 --- !u!114 &1793924985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4458,6 +4616,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 231556727}
   - {fileID: 396632618}
   - {fileID: 1793924988}
   - {fileID: 1041758753}

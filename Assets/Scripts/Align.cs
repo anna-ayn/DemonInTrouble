@@ -24,11 +24,7 @@ public class Align
     protected float orientationFace = 0;
 
     public float mapToRange(float angle) {
-        if (angle > 180)
-            angle -= 360;
-        else if (angle < -180)
-            angle += 360;
-        return angle;
+        return (angle + Mathf.PI) % (2 * Mathf.PI) - Mathf.PI;
     }
 
     public virtual SteeringOutput getSteering() {
@@ -37,12 +33,12 @@ public class Align
         float rotation;
         // get the naive direction to the target
         if (orientationFace == 0) 
-            rotation = (target.orientation - character.orientation) * Mathf.Rad2Deg;
+            rotation = target.orientation - character.orientation;
         else 
-            rotation = (orientationFace - character.orientation) * Mathf.Rad2Deg;
+            rotation = orientationFace - character.orientation;
             
         // map the result to the (-pi, pi) interval
-        rotation = mapToRange(rotation);
+        rotation = mapToRange(rotation) * Mathf.Rad2Deg;
         float rotationSize = Mathf.Abs(rotation);
 
         if (rotationSize < targetRadius) {
