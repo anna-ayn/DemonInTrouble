@@ -20,7 +20,6 @@ public class FaceMain : MonoBehaviour
         algorithm.target = target.kinematic;
 
         character.steering = algorithm.getSteeringFace();
-        character.kinematic.orientation += character.steering.angular * Time.deltaTime;
-        character.transform.rotation = Quaternion.Euler(0, 0, character.kinematic.orientation * Mathf.Rad2Deg);
+        character.doUpdate();
     }
 }

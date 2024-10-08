@@ -219,8 +219,8 @@ MonoBehaviour:
   character: {fileID: 175456319}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -645,8 +645,8 @@ MonoBehaviour:
   character: {fileID: 195620238}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -1342,8 +1342,8 @@ MonoBehaviour:
   character: {fileID: 396632623}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -1589,8 +1589,8 @@ MonoBehaviour:
   character: {fileID: 738401372}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -2233,8 +2233,8 @@ MonoBehaviour:
   character: {fileID: 1276628386}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -2659,8 +2659,8 @@ MonoBehaviour:
   character: {fileID: 1602907946}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -3085,8 +3085,8 @@ MonoBehaviour:
   character: {fileID: 1623054412}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -3511,8 +3511,8 @@ MonoBehaviour:
   character: {fileID: 1816363038}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -4065,8 +4065,8 @@ MonoBehaviour:
   character: {fileID: 2017621927}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
@@ -4491,8 +4491,8 @@ MonoBehaviour:
   character: {fileID: 2032255725}
   target: {fileID: 817006703}
   algorithm:
-    maxAngularAcceleration: 10
-    maxRotation: 10
+    maxAngularAcceleration: 1
+    maxRotation: 1
     targetRadius: 3
     slowRadius: 5
     timeToTarget: 0.1
