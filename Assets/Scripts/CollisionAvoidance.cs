@@ -22,7 +22,6 @@ public class CollisionAvoidance
         // 1. find the target that's closest to collision
         // store the first collision time
         float shortestTime = float.PositiveInfinity;
-        Debug.Log(shortestTime);
 
         // store the target that collides them, and
         // other data that we will need and can avoid

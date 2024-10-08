@@ -884,8 +884,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400232271f7390a4e8047c483ad692ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 322494780}
-  target: {fileID: 1434022802}
+  character: {fileID: 1434022802}
+  target: {fileID: 322494780}
   algorithm:
     maxAngularAcceleration: 5
     maxRotation: 10

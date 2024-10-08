@@ -20,6 +20,8 @@ public class WanderMain : MonoBehaviour
         algorithm.target = target.kinematic;
 
         character.steering = algorithm.getSteeringWander();
+        Debug.Log("linear " + character.steering.linear);
+        Debug.Log("angular " + character.steering.angular);
         character.doUpdate(algorithm.maxSpeed);
     }
 }

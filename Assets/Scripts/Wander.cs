@@ -34,24 +34,26 @@ public class Wander : Face
     }
 
     public virtual SteeringOutput getSteeringWander() {
+        float targetOrientation;
         SteeringOutput result = new SteeringOutput();
-        // 1. calculate the target to delegate to  face
+
+        // 1. calculate the target to delegate to face
         // update the wander orientation
-        wanderOrientation += randomBinomial() * wanderRate;
+        wanderOrientation += Random.Range(-1.0f, 1.0f) * wanderRate;
 
-        // calculate the combined targed orientation
-        float targetOrientation = wanderOrientation + (character.orientation * Mathf.Rad2Deg);
-
-        // calculate the center of the wander circle
+        // calculate the combined target orientation
+        targetOrientation = wanderOrientation + character.orientation;
+        
+        // calculate the center of the wander circle.
         wanderTarget = character.position + wanderOffset * AsVector(character.orientation);
 
         // calculate the target location
         wanderTarget += wanderRadius * AsVector(targetOrientation);
 
-        // 2. delegate to seek
-        result = getSteeringFace();
+        // 2. delegate to face
+        result = base.getSteeringFace();
 
-        // 3. Now set the linear acceleration to be at full
+        // 3. now set the linear acceleration to be at full 
         // acceleration in the direction of the orientation
         result.linear = maxAcceleration * AsVector(character.orientation);
         
