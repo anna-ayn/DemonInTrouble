@@ -7,6 +7,6 @@ public abstract class Transition
     public abstract bool isTriggered();
     // The getTargetState method reports which state to transition to.
     public abstract string getTargetState();
-    // The getAction method returns a list of actions to carry out when the transition fires.
-    public abstract List<Action> getActions();
+    // The getAction method do a list of actions to carry out when the transition fires.
+    public abstract void getActions();
 }

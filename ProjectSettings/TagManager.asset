@@ -21,6 +21,11 @@ TagManager:
   - Cube8
   - Gem
   - Line
+  - LineEnemy
+  - Enemy
+  - Pet
+  - PlayerHome
+  - EnemyHome
   layers:
   - Default
   - TransparentFX
