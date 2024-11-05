@@ -95,7 +95,9 @@
     <Compile Include="Assets\Scripts\Face.cs" />
     <Compile Include="Assets\Scripts\Arrive.cs" />
     <Compile Include="Assets\Scripts\SteeringOutput.cs" />
+    <Compile Include="Assets\Scripts\Transition.cs" />
     <Compile Include="Assets\Scripts\LookWhereYoureGoingMain.cs" />
+    <Compile Include="Assets\Scripts\DecisionTreeNode.cs" />
     <Compile Include="Assets\Scripts\SeparationMain.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\VelocityMatch.cs" />
