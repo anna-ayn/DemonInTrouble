@@ -19,10 +19,15 @@ public class TransitionToStop : Transition
             distance = Vector3.Distance(enemy.transform.position, character.transform.position);
             if (distance < 15.0f)
                 return true;
-        } else if (typeCharacter == "Pet") { // Si el personaje es la mascota se activa la transicion si el jugador esta cerca de el
-            GameObject player = GameObject.FindGameObjectsWithTag("Player")[0]; 
+        } else if (typeCharacter == "Pet") {
+            // si el jugador esta pintado  de azul no se activa la transicion
+            GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+            if (player.GetComponent<Renderer>().material.color == Color.blue)
+                return false;
+
+            // si el jugador esta lejos de la mascota se activa la transicion
             distance = Vector3.Distance(player.transform.position, character.transform.position);
-            if (distance < 40.0f)
+            if (distance < 30.0f)
                 return true;
         }
         return false;

@@ -84,7 +84,7 @@ public class StateMachinePlayer : MonoBehaviour
             // Find the target state.
             string targetState = triggered.getTargetState();
 
-            Debug.Log("Transition triggered: " + triggered.getTargetState());
+            Debug.Log("Transition triggered for " + gameObject.name + ": " + triggered.getTargetState());
 
             // Add the exit action of the old state, the
             // transition action and the entry for the new state

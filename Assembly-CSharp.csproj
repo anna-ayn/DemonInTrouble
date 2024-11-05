@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\StateArrivedHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
+    <Compile Include="Assets\Scripts\StateMachinePet.cs" />
     <Compile Include="Assets\Scripts\StateSearchGem.cs" />
     <Compile Include="Assets\Scripts\VelocityMatchMain.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidanceMain.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Assets\Scripts\Transition.cs" />
     <Compile Include="Assets\Scripts\LookWhereYoureGoingMain.cs" />
     <Compile Include="Assets\Scripts\SeparationMain.cs" />
+    <Compile Include="Assets\Scripts\StateMachineEnemy.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\VelocityMatch.cs" />
     <Compile Include="Assets\Scripts\TransitionWalkToSearchGem.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Assets\Scripts\Evade.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />
     <Compile Include="Assets\Scripts\FleeMain.cs" />
+    <Compile Include="Assets\Scripts\TransitionScareEnemy.cs" />
     <Compile Include="Assets\Scripts\StateWalk.cs" />
     <Compile Include="Assets\Scripts\SeekMain.cs" />
     <Compile Include="Assets\Scripts\TransitionToStop.cs" />

@@ -26,6 +26,8 @@ TagManager:
   - Pet
   - PlayerHome
   - EnemyHome
+  - LinePet
+  - LinePlayer
   layers:
   - Default
   - TransparentFX

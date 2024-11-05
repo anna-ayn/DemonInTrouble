@@ -18,15 +18,20 @@ public class TransitionToStartWalking : Transition
         {
             GameObject pet = GameObject.FindGameObjectsWithTag("Pet")[0];
             distance = Vector3.Distance(pet.transform.position, character.transform.position);
+            if (distance > 20.0f)
+                return true;
         } else if (typeCharacter == "Player") {
             // Si el personaje es el jugador, se activa la transición si el enemigo no esta cerca de 30m
+            // o si el enemigo esta en su casa
             GameObject enemy = GameObject.FindGameObjectsWithTag("Enemy")[0];
             distance = Vector3.Distance(enemy.transform.position, character.transform.position);
-        }
-        if (distance > 30.0f)
-            return true;
-        else
-            return false;
+
+            GameObject enemyHome = GameObject.FindGameObjectsWithTag("EnemyHome")[0];   
+            float distanceHome = Vector3.Distance(enemyHome.transform.position, enemy.transform.position);
+            if (distance > 20.0f || distanceHome < 15.0f)
+                return true;
+        }       
+        return false;
     }
     public override string getTargetState()
     {

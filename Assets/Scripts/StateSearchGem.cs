@@ -43,15 +43,10 @@ public class StateSearchGem: State
 
     public override void getEntryActions()
     {
-        // Acciones al entrar al estado
-        Debug.Log("Entrando a estado Buscar Gema");
     }
 
     public override void getExitActions()
     {
-        // Acciones al salir del estado
-        Debug.Log("Saliendo de estado Buscar Gema");;
-        // Se recolecta la gema al salir del estado
         UnityEngine.Object.Destroy(gem);
     }
 

@@ -20,7 +20,7 @@ public class TransitionStartGoToHome : Transition
             foreach (GameObject g in gem)
             {
                 float distance = Vector3.Distance(g.transform.position, character.transform.position);
-                if (distance < 5.0f)
+                if (distance < 10.0f)
                     return true;
             }
         } 
@@ -29,7 +29,7 @@ public class TransitionStartGoToHome : Transition
         {
             GameObject pet = GameObject.FindGameObjectsWithTag("Pet")[0];
             float distance = Vector3.Distance(pet.transform.position, character.transform.position);
-            if (distance < 10.0f)
+            if (distance < 15.0f)
                 return true;
         }
         return false;

@@ -15,16 +15,25 @@ public class StateStop : State
 
     public override void getActions()
     {
+        if (character.GetComponent<Agent>().kinematic.velocity.magnitude > 0.0f)
+            character.GetComponent<Agent>().kinematic.velocity = Vector3.zero;
+        
+        if (character.tag == "Player") {
+            // pintarlo de azul
+            character.GetComponent<Renderer>().material.color = Color.blue;
+        }
         return;
     }
     public override void getEntryActions()
     {
-        Debug.Log("Entrando a estado de Espera");
         return;
     }
     public override void getExitActions()
     {
-        Debug.Log("Saliendo del estado de Espera");
+        // volver al color original
+        if (character.tag == "Player") {
+            character.GetComponent<Renderer>().material.color = Color.white;
+        }
         return;
     }
     public override List<Transition> getTransitions()
