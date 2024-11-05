@@ -66,21 +66,30 @@
     <Compile Include="Assets\Scripts\LookWhereYoureGoing.cs" />
     <Compile Include="Assets\Scripts\Flee.cs" />
     <Compile Include="Assets\Scripts\EvadeMain.cs" />
+    <Compile Include="Assets\Scripts\Heuristic.cs" />
+    <Compile Include="Assets\Scripts\PathFind.cs" />
+    <Compile Include="Assets\Scripts\PathFindMain.cs" />
+    <Compile Include="Assets\Scripts\PathFindingList.cs" />
     <Compile Include="Assets\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
     <Compile Include="Assets\Scripts\VelocityMatchMain.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidanceMain.cs" />
     <Compile Include="Assets\Scripts\KinematicSteeringOutput.cs" />
     <Compile Include="Assets\Scripts\FaceMain.cs" />
+    <Compile Include="Assets\Scripts\Connection.cs" />
     <Compile Include="Assets\Scripts\AlignMain.cs" />
+    <Compile Include="Assets\AnimationPlayerScript.cs" />
     <Compile Include="Assets\Scripts\WanderMain.cs" />
     <Compile Include="Assets\Scripts\KinematicArrive.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Separation.cs" />
     <Compile Include="Assets\Scripts\ArriveMain.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
+    <Compile Include="Assets\Scripts\NodeRecord.cs" />
     <Compile Include="Assets\Scripts\AgentTeleport.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
+    <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\Wander.cs" />
     <Compile Include="Assets\Scripts\KinematicWander.cs" />
     <Compile Include="Assets\Scripts\Face.cs" />
@@ -99,7 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UnityAssetStoreExports\Witchery AssetPack\Readme.txt" />
-    <None Include="Assets\8Bit Music - 062022\Notes.txt" />
+    <None Include="Assets\Rectangle World Tiles - Free\ReadMe.txt" />
+    <None Include="Assets\karsiori\Sprites\Pixel Art Gem Pack - Read Me.txt" />
+    <None Include="Assets\Brown Rock Tileset\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -942,6 +953,10 @@
       <HintPath>Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1014,10 +1029,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
       <Private>False</Private>
@@ -1026,12 +1037,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
@@ -1040,6 +1051,10 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
@@ -1100,6 +1115,10 @@
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">

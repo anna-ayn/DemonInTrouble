@@ -7,6 +7,20 @@ TagManager:
   - Background
   - Target
   - Character
+  - Squares
+  - OreIron
+  - Cube0
+  - Cube1
+  - Cube2
+  - Cube3
+  - Cube5
+  - Cube4
+  - Cube6
+  - Cube7
+  - Cube9
+  - Cube8
+  - Gem
+  - Line
   layers:
   - Default
   - TransparentFX
