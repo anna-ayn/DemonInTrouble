@@ -21,6 +21,10 @@ public class StateStop : State
         if (character.tag == "Player") {
             // pintarlo de azul
             character.GetComponent<Renderer>().material.color = Color.blue;
+
+            // habilitar componente de escudo
+            character.GetComponent<ShieldController>().enabled = true;
+            character.GetComponent<ShieldController>().ShowShield();
         }
         return;
     }
@@ -33,6 +37,10 @@ public class StateStop : State
         // volver al color original
         if (character.tag == "Player") {
             character.GetComponent<Renderer>().material.color = Color.white;
+
+            // deshabilitar componente de escudo
+            character.GetComponent<ShieldController>().HideShield();
+            
         }
         return;
     }

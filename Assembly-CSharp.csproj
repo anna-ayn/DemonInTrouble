@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LookWhereYoureGoing.cs" />
+    <Compile Include="Assets\Scripts\ShieldController.cs" />
     <Compile Include="Assets\Scripts\Flee.cs" />
     <Compile Include="Assets\Scripts\EvadeMain.cs" />
     <Compile Include="Assets\Scripts\Heuristic.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Assets\Scripts\AgentTeleport.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
+    <Compile Include="Assets\Scripts\BagController.cs" />
     <Compile Include="Assets\Scripts\Wander.cs" />
     <Compile Include="Assets\Scripts\KinematicWander.cs" />
     <Compile Include="Assets\Scripts\TransitionArrivedHome.cs" />
@@ -130,6 +132,7 @@
     <None Include="Assets\UnityAssetStoreExports\Witchery AssetPack\Readme.txt" />
     <None Include="Assets\karsiori\Sprites\Pixel Art Gem Pack - Read Me.txt" />
     <None Include="Assets\Brown Rock Tileset\Readme.txt" />
+    <None Include="Assets\8Bit Music - 062022\Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

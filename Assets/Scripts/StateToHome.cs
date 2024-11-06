@@ -19,8 +19,18 @@ public class StateToHome : State
     {
         character.GetComponent<PathFindCharacter>().random_target = false;
         // Asignar la casa del personaje como objetivo
-        GameObject player = GameObject.FindGameObjectsWithTag(character.tag + "Home")[0];
-        character.GetComponent<PathFindCharacter>().target = player;
+        GameObject home = GameObject.FindGameObjectsWithTag(character.tag + "Home")[0];
+        character.GetComponent<PathFindCharacter>().target = home;
+        
+        if (character.tag == "Player")
+        {
+            // visualizar el bolso del personaje
+            character.GetComponent<BagController>().enabled = true;
+            character.GetComponent<BagController>().Showbag();
+        } else if (character.tag == "Enemy") {
+            // pintarlo de color rojo
+            character.GetComponent<Renderer>().material.color = Color.red;
+        }
     }
 
     public override void getEntryActions()
@@ -29,6 +39,14 @@ public class StateToHome : State
 
     public override void getExitActions()
     {
+        if (character.tag == "Player")
+        {
+            // ocultar el bolso del personaje
+            character.GetComponent<BagController>().Hidebag();
+        } else if (character.tag == "Enemy") {
+            // volver al color original
+            character.GetComponent<Renderer>().material.color = Color.white;
+        }
     }
 
     public override List<Transition> getTransitions()

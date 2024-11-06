@@ -15,22 +15,13 @@ public class TransitionWalkToSearchGem : Transition
     {
         gems = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gem"));
 
-        // calcular la distancia entre el personaje y las gemas
-        float min_distance = float.MaxValue;
+        // buscar la primera gema cercana al personaje 
         foreach (GameObject gem in gems)
         {
             float distance = Vector3.Distance(gem.transform.position, character.transform.position);
-            if (distance < min_distance)
-            {
-                min_distance = distance;
-            }
+            if (distance < 30.0f)
+                return true;
         }
-
-        // si la distancia minima es menor a 50 metros, se activa la transición
-        if (min_distance < 50.0f)
-        {
-            return true;
-        } 
         return false;
     }
     public override string getTargetState()

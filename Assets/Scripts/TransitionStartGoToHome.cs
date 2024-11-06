@@ -20,8 +20,10 @@ public class TransitionStartGoToHome : Transition
             foreach (GameObject g in gem)
             {
                 float distance = Vector3.Distance(g.transform.position, character.transform.position);
-                if (distance < 10.0f)
+                if (distance < 10.0f) {
+                    UnityEngine.Object.Destroy(g);
                     return true;
+                }
             }
         } 
         // Si el personaje es un enemigo, se activa la transición si esta cerca de la mascota

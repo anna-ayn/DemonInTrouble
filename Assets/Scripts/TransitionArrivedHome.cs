@@ -15,7 +15,7 @@ public class TransitionArrivedHome : Transition
     {
         GameObject home = GameObject.FindGameObjectsWithTag(character.tag + "Home")[0];
         float distance = Vector3.Distance(home.transform.position, character.transform.position);
-        if (distance < 15.0f)
+        if (distance < 10.0f)
         {
             return true;
         }
