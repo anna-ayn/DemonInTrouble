@@ -42,6 +42,8 @@ public class StateToHome : State
         if (character.tag == "Enemy") {
             character.GetComponent<Renderer>().material.color = Color.white;
         }
+        character.GetComponent<PathFindCharacter>().random_target = true;
+        
     }
 
     public override List<Transition> getTransitions()

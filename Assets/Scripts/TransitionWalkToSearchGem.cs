@@ -5,7 +5,6 @@ using UnityEngine;
 public class TransitionWalkToSearchGem : Transition
 {
     GameObject character;
-    List<GameObject> gems;
 
     public TransitionWalkToSearchGem(GameObject character)
     {
@@ -13,7 +12,7 @@ public class TransitionWalkToSearchGem : Transition
     }
     public override bool isTriggered()
     {
-        gems = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gem"));
+        List<GameObject> gems = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gem"));
 
         // buscar la primera gema cercana al personaje 
         foreach (GameObject gem in gems)

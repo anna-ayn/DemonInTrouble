@@ -20,6 +20,7 @@ public class StateArrivedHome : State
         {
             // ocultar el bolso del personaje
             character.GetComponent<BagController>().Hidebag();
+            character.GetComponent<BagController>().enabled = false;
         } 
         return;
     }
@@ -29,6 +30,7 @@ public class StateArrivedHome : State
     }
     public override void getExitActions()
     {
+        character.GetComponent<PathFindCharacter>().random_target = true;
         return;
     }
     public override List<Transition> getTransitions()

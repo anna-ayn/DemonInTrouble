@@ -24,6 +24,7 @@ public class TransitionStartGoToHome : Transition
                     return false;
             }
             
+            // si el personaje tiene una bolsa, se activa la transición para ir a casa
             if (character.GetComponent<BagController>().enabled && character.GetComponent<BagController>().isShowingABag()) {
                 return true;
             }

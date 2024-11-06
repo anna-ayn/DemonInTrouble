@@ -10,7 +10,7 @@ public class PathFindCharacter : MonoBehaviour
     public Node targetNode; // el lugar que quiere ir
     PathFind algorithm;
 
-    List<Node> path = new List<Node>();
+    public List<Node> path = new List<Node>();
 
     public float maxAcceleration;
 
@@ -56,6 +56,10 @@ public class PathFindCharacter : MonoBehaviour
         if (!random_target)
         {
             targetNode = graph.FindCube(target.transform.position);
+        }
+
+        if (gameObject.tag == "Player") {
+            Debug.Log("Nodo objetivo: " + targetNode.getCube().name);
         }
 
         algorithm.goal = targetNode;

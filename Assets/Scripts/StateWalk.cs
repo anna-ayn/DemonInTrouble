@@ -26,7 +26,6 @@ public class StateWalk : State
 
     public override void getExitActions()
     {
-        character.GetComponent<PathFindCharacter>().random_target = false;
     }
 
     public override List<Transition> getTransitions()

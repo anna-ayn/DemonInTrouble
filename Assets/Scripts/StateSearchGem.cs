@@ -6,7 +6,7 @@ using UnityEngine;
 public class StateSearchGem: State
 {
     GameObject character;
-    GameObject gem;
+    int gem_id;
     List<Transition> transitions = new List<Transition>();
 
     public StateSearchGem(GameObject character, List<Transition> transitions)
@@ -14,13 +14,13 @@ public class StateSearchGem: State
         this.character = character;
         this.transitions = transitions;
         this.name = "SearchGem";
-        this.gem = null;
+        this.gem_id = -1;
     }
 
     public override void getActions()
     {
-        if (gem == null) {
-            GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
+        GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
+        if (gem_id == -1) {
             character.GetComponent<PathFindCharacter>().random_target = false;
             // buscar la primera gema cercana a 30m de el
             for (int i = 0; i < gems.Length; i++)
@@ -28,13 +28,13 @@ public class StateSearchGem: State
                 float distance = Vector3.Distance(gems[i].transform.position, character.transform.position);
                 if (distance < 30.0f)
                 {
-                    gem = gems[i];
+                    gem_id = i;
                     character.GetComponent<PathFindCharacter>().target = gems[i];
                     return;
                 }
             }
         }
-        character.GetComponent<PathFindCharacter>().target = gem;
+        character.GetComponent<PathFindCharacter>().target = gems[gem_id];
         return;
     }
 
@@ -44,7 +44,7 @@ public class StateSearchGem: State
 
     public override void getExitActions()
     {
-        gem = null;
+        gem_id = -1;
         return;
     }
 
