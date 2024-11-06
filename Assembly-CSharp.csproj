@@ -111,12 +111,13 @@
     <Compile Include="Assets\Scripts\Arrive.cs" />
     <Compile Include="Assets\Scripts\SteeringOutput.cs" />
     <Compile Include="Assets\Scripts\Transition.cs" />
+    <Compile Include="Assets\AnimationPetScript.cs" />
     <Compile Include="Assets\Scripts\LookWhereYoureGoingMain.cs" />
     <Compile Include="Assets\Scripts\SeparationMain.cs" />
     <Compile Include="Assets\Scripts\StateMachineEnemy.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
-    <Compile Include="Assets\Scripts\VelocityMatch.cs" />
     <Compile Include="Assets\Scripts\TransitionWalkToSearchGem.cs" />
+    <Compile Include="Assets\Scripts\VelocityMatch.cs" />
     <Compile Include="Assets\Scripts\StateStop.cs" />
     <Compile Include="Assets\Scripts\Evade.cs" />
     <Compile Include="Assets\Scripts\Seek.cs" />

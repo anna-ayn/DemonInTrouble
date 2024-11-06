@@ -50,6 +50,7 @@ public class StateMachineEnemy : MonoBehaviour
 
         initialState = walkState; // walking randomly as initialstate
         currentState = initialState;
+
     }
 
     // Checks and applies transitions, returning a list of actions.

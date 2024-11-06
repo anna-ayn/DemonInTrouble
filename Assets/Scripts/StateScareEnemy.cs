@@ -24,8 +24,6 @@ public class StateScareEnemy : State
 
     public override void getEntryActions()
     {
-        Animator animator = character.GetComponent<Animator>();
-        animator.SetBool("Attack", true);
     }
 
     public override void getExitActions()
