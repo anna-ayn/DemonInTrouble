@@ -21,6 +21,10 @@ public class TransitionToStartWalking : Transition
             if (distance > 20.0f)
                 return true;
         } else if (typeCharacter == "Player") {
+            // Si el personaje tiene el bolso con la gema, no se activa la transición
+            if (character.GetComponent<BagController>().enabled && character.GetComponent<BagController>().isShowingABag()) {
+                return false;
+            }
             // Si el personaje es el jugador, se activa la transición si el enemigo no esta cerca de 30m
             // o si el enemigo esta en su casa
             GameObject enemy = GameObject.FindGameObjectsWithTag("Enemy")[0];

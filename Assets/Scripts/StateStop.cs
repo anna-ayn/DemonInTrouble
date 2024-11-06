@@ -34,14 +34,13 @@ public class StateStop : State
     }
     public override void getExitActions()
     {
-        // volver al color original
+        character.GetComponent<Renderer>().material.color = Color.white;
         if (character.tag == "Player") {
-            character.GetComponent<Renderer>().material.color = Color.white;
+            // deshabilitar componente de escudo 
 
-            // deshabilitar componente de escudo
+            character.GetComponent<ShieldController>().enabled = false;
             character.GetComponent<ShieldController>().HideShield();
-            
-        }
+        } 
         return;
     }
     public override List<Transition> getTransitions()

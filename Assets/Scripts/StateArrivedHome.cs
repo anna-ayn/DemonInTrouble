@@ -15,16 +15,20 @@ public class StateArrivedHome : State
 
     public override void getActions()
     {
+        character.GetComponent<Renderer>().material.color = Color.white;
+        if (character.tag == "Player")
+        {
+            // ocultar el bolso del personaje
+            character.GetComponent<BagController>().Hidebag();
+        } 
         return;
     }
     public override void getEntryActions()
     {
-        Debug.Log("Entrando a estado de Esperar en casa");
         return;
     }
     public override void getExitActions()
     {
-        Debug.Log("Saliendo del estado de Esperar en casa");
         return;
     }
     public override List<Transition> getTransitions()

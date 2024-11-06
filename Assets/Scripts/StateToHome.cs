@@ -39,12 +39,7 @@ public class StateToHome : State
 
     public override void getExitActions()
     {
-        if (character.tag == "Player")
-        {
-            // ocultar el bolso del personaje
-            character.GetComponent<BagController>().Hidebag();
-        } else if (character.tag == "Enemy") {
-            // volver al color original
+        if (character.tag == "Enemy") {
             character.GetComponent<Renderer>().material.color = Color.white;
         }
     }

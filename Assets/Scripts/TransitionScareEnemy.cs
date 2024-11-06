@@ -17,7 +17,6 @@ public class TransitionScareEnemy  : Transition
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         float distance = Vector3.Distance(enemy.transform.position, player.transform.position);
 
-        Debug.Log("Distance between enemy and player: " + distance);
         if (distance < 15.0f)
             return true;
         return false;

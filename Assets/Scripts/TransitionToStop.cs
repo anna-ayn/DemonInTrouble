@@ -17,6 +17,7 @@ public class TransitionToStop : Transition
         if (typeCharacter == "Player") {
             GameObject enemy = GameObject.FindGameObjectsWithTag("Enemy")[0];
             distance = Vector3.Distance(enemy.transform.position, character.transform.position);
+            Debug.Log("Distance: " + distance);
             if (distance < 15.0f)
                 return true;
         } else if (typeCharacter == "Pet") {

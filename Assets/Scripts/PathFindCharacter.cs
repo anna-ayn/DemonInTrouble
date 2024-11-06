@@ -30,10 +30,8 @@ public class PathFindCharacter : MonoBehaviour
         {
             int randomIndex = Random.Range(0, graph.Nodes.Count);
             targetNode = graph.Nodes[randomIndex];
-            Debug.Log("Nodo objetivo seleccionado aleatoriamente");
         } else {
             targetNode = graph.FindCube(target.transform.position);
-            Debug.Log("Nodo objetivo: " + targetNode.getCube().name);
         }
     }
    

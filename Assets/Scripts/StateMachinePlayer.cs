@@ -15,8 +15,6 @@ public class StateMachinePlayer : MonoBehaviour
     List<Transition> TwalkToSearchGem = new List<Transition>();
     List<Transition> TarrivedHome = new List<Transition>();
 
-
-
     public void Start()
     {
         
@@ -37,8 +35,10 @@ public class StateMachinePlayer : MonoBehaviour
         TwalkToSearchGem.Add(startGoToHome);
         // si el jugador esta detenido, puede volver a caminar aleatoriamente si el enemigo se aleja
         Tstop.Add(startWalking);
+        Tstop.Add(startGoToHome);
         // si el jugador va a su casa con su gema, se detiene al llegar
         TstartGoToHome.Add(arrivedHome);
+        TstartGoToHome.Add(stop);
         // si el jugador esta en su casa, puede volver a caminar aleatoriamente
         TarrivedHome.Add(startWalking);
 
