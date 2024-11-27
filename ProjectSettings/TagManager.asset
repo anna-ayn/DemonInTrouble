@@ -28,6 +28,9 @@ TagManager:
   - EnemyHome
   - LinePet
   - LinePlayer
+  - Gems
+  - Traps
+  - Scroll
   layers:
   - Default
   - TransparentFX

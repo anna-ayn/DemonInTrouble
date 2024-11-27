@@ -39,6 +39,7 @@ public class PathFindCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // algorithm.graph.DrawNodes();
         algorithm.character = character.kinematic;
         algorithm.start = graph.FindCube(character.kinematic.position);
 
@@ -56,10 +57,6 @@ public class PathFindCharacter : MonoBehaviour
         if (!random_target)
         {
             targetNode = graph.FindCube(target.transform.position);
-        }
-
-        if (gameObject.tag == "Player") {
-            Debug.Log("Nodo objetivo: " + targetNode.getCube().name);
         }
 
         algorithm.goal = targetNode;

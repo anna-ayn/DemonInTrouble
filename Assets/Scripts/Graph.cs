@@ -69,4 +69,24 @@ public class Graph
     {
         return node.getNeighbors();
     }
+
+    // visualizar el borde de cada nodo
+    public void DrawNodes() {
+        foreach (Node node in Nodes)
+        {
+            // obtener los vertices del cubo
+            Vector3[] vertices = node.getCube().GetComponent<MeshFilter>().mesh.vertices;
+            // dibujar la cara frontal del cubo
+            Vector3 scale = node.getCube().transform.localScale;
+            Vector3 offset = new Vector3(scale.x, scale.y, scale.z);
+
+
+            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[0], offset), node.getCube().transform.position + Vector3.Scale(vertices[1], offset), Color.white, 0.1f);
+            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[2], offset), node.getCube().transform.position + Vector3.Scale(vertices[3], offset), Color.white, 0.1f);
+            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[0], offset), node.getCube().transform.position + Vector3.Scale(vertices[2], offset), Color.white, 0.1f);
+            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[1], offset), node.getCube().transform.position + Vector3.Scale(vertices[3], offset), Color.white, 0.1f);
+            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[3], offset), node.getCube().transform.position + Vector3.Scale(vertices[0], offset), Color.white, 0.1f);
+
+        }
+    }
 }

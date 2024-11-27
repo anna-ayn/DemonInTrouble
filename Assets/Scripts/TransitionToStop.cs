@@ -17,7 +17,7 @@ public class TransitionToStop : Transition
         if (typeCharacter == "Player") {
             GameObject enemy = GameObject.FindGameObjectsWithTag("Enemy")[0];
             distance = Vector3.Distance(enemy.transform.position, character.transform.position);
-            if (distance < 15.0f)
+            if (distance < 10.0f)
                 return true;
         } else if (typeCharacter == "Pet") {
             // si el jugador esta pintado  de azul no se activa la transicion

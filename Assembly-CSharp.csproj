@@ -71,7 +71,11 @@
     <Compile Include="Assets\Scripts\PathFind.cs" />
     <Compile Include="Assets\Scripts\PathFindMain.cs" />
     <Compile Include="Assets\Scripts\PathFindingList.cs" />
+    <Compile Include="Assets\StopEnemyController.cs" />
+    <Compile Include="Assets\ExclamationsController.cs" />
     <Compile Include="Assets\Scripts\TargetScript.cs" />
+    <Compile Include="Assets\Scripts\StateAlert.cs" />
+    <Compile Include="Assets\Scripts\StateSearchForTrap.cs" />
     <Compile Include="Assets\Scripts\StateArrivedHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
     <Compile Include="Assets\Scripts\StateMachinePet.cs" />
@@ -80,6 +84,7 @@
     <Compile Include="Assets\Scripts\CollisionAvoidanceMain.cs" />
     <Compile Include="Assets\Scripts\TransitionStartGoToHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSteeringOutput.cs" />
+    <Compile Include="Assets\Scripts\TransitionAlert.cs" />
     <Compile Include="Assets\Scripts\FaceMain.cs" />
     <Compile Include="Assets\Scripts\Connection.cs" />
     <Compile Include="Assets\Scripts\AlignMain.cs" />
@@ -92,12 +97,15 @@
     <Compile Include="Assets\Scripts\TransitionStartPursuePlayer.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\StateMachinePlayer.cs" />
+    <Compile Include="Assets\Scripts\TransitionSearchForTrap.cs" />
     <Compile Include="Assets\Scripts\State.cs" />
     <Compile Include="Assets\Scripts\PathFindCharacter.cs" />
     <Compile Include="Assets\Scripts\StateToHome.cs" />
     <Compile Include="Assets\Scripts\Separation.cs" />
+    <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ArriveMain.cs" />
     <Compile Include="Assets\Scripts\Align.cs" />
+    <Compile Include="Assets\ScrollsRandom.cs" />
     <Compile Include="Assets\Scripts\Kinematic.cs" />
     <Compile Include="Assets\Scripts\NodeRecord.cs" />
     <Compile Include="Assets\Scripts\AgentTeleport.cs" />
@@ -115,6 +123,7 @@
     <Compile Include="Assets\Scripts\LookWhereYoureGoingMain.cs" />
     <Compile Include="Assets\Scripts\SeparationMain.cs" />
     <Compile Include="Assets\Scripts\StateMachineEnemy.cs" />
+    <Compile Include="Assets\GemsRandom.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\TransitionWalkToSearchGem.cs" />
     <Compile Include="Assets\Scripts\VelocityMatch.cs" />
