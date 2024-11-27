@@ -18,7 +18,7 @@ public class TransitionWalkToSearchGem : Transition
         foreach (GameObject gem in gems)
         {
             float distance = Vector3.Distance(gem.transform.position, character.transform.position);
-            if (distance < 30.0f)
+            if (distance < 50.0f)
                 return true;
         }
         return false;

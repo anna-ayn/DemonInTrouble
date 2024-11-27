@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\TransitionToStartWalking.cs" />
     <Compile Include="Assets\Scripts\StateScareEnemy.cs" />
     <Compile Include="Assets\Scripts\KinematicArrive.cs" />
+    <Compile Include="Assets\NodesVisualization.cs" />
     <Compile Include="Assets\Scripts\TransitionStartPursuePlayer.cs" />
     <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\StateMachinePlayer.cs" />

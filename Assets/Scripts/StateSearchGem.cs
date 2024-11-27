@@ -22,11 +22,11 @@ public class StateSearchGem: State
         GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
         if (gem_id == -1) {
             character.GetComponent<PathFindCharacter>().random_target = false;
-            // buscar la primera gema cercana a 30m de el
+            // buscar la primera gema cercana a 50m de el
             for (int i = 0; i < gems.Length; i++)
             {
                 float distance = Vector3.Distance(gems[i].transform.position, character.transform.position);
-                if (distance < 30.0f)
+                if (distance < 50.0f)
                 {
                     gem_id = i;
                     character.GetComponent<PathFindCharacter>().target = gems[i];

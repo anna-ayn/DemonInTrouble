@@ -39,7 +39,6 @@ public class PathFindCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // algorithm.graph.DrawNodes();
         algorithm.character = character.kinematic;
         algorithm.start = graph.FindCube(character.kinematic.position);
 
@@ -99,8 +98,8 @@ public class PathFindCharacter : MonoBehaviour
                     lineRenderer.startColor = Color.blue;
                     lineRenderer.endColor = Color.blue;
                 } else if (character.gameObject.tag == "Pet") {
-                    lineRenderer.startColor = Color.white;
-                    lineRenderer.endColor = Color.white;
+                    lineRenderer.startColor = Color.black;
+                    lineRenderer.endColor = Color.black;
                 }
             }
             // una linea del ultimo nodo al personaje
@@ -122,8 +121,8 @@ public class PathFindCharacter : MonoBehaviour
                 lineRenderer2.endColor = Color.blue;
             }
              else if (character.gameObject.tag == "Pet") {
-                lineRenderer2.startColor = Color.white;
-                lineRenderer2.endColor = Color.white;
+                lineRenderer2.startColor = Color.black;
+                lineRenderer2.endColor = Color.black;
             }
 
             character.steering = algorithm.getSteering(path[path.Count - 1]);

@@ -80,13 +80,18 @@ public class Graph
             Vector3 scale = node.getCube().transform.localScale;
             Vector3 offset = new Vector3(scale.x, scale.y, scale.z);
 
+            GameObject line = new GameObject("Line");
+            LineRenderer lr = line.AddComponent<LineRenderer>();
+            lr.startWidth = 0.1f;
+            lr.endWidth = 0.1f;
+            lr.positionCount = vertices.Length;
+            lr.material = new Material(Shader.Find("Sprites/Default"));
+            lr.startColor = Color.white;
+            lr.endColor = Color.white;
 
-            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[0], offset), node.getCube().transform.position + Vector3.Scale(vertices[1], offset), Color.white, 0.1f);
-            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[2], offset), node.getCube().transform.position + Vector3.Scale(vertices[3], offset), Color.white, 0.1f);
-            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[0], offset), node.getCube().transform.position + Vector3.Scale(vertices[2], offset), Color.white, 0.1f);
-            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[1], offset), node.getCube().transform.position + Vector3.Scale(vertices[3], offset), Color.white, 0.1f);
-            Debug.DrawLine(node.getCube().transform.position + Vector3.Scale(vertices[3], offset), node.getCube().transform.position + Vector3.Scale(vertices[0], offset), Color.white, 0.1f);
-
+            for (int i = 0; i < vertices.Length; i++) {
+                lr.SetPosition(i, node.getCube().transform.position + Vector3.Scale(vertices[i], offset));
+            }
         }
     }
 }
