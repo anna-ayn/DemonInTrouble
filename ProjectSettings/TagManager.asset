@@ -31,6 +31,9 @@ TagManager:
   - Gems
   - Traps
   - Scroll
+  - LineOpt
+  - LineOptPlayer
+  - LineOptEnemy
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,9 @@ public class PathFind
     public Kinematic character;
 
     [System.NonSerialized]
+    public string typecharacter;
+
+    [System.NonSerialized]
     public Graph graph;
 
     [System.NonSerialized]

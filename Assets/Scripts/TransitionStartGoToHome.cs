@@ -28,12 +28,13 @@ public class TransitionStartGoToHome : Transition
             if (character.GetComponent<BagController>().enabled && character.GetComponent<BagController>().isShowingABag()) {
                 return true;
             }
+
             GameObject[] gem = GameObject.FindGameObjectsWithTag("Gem");
             foreach (GameObject g in gem)
             {
                 float distance = Vector3.Distance(g.transform.position, character.transform.position);
-                if (distance < 10.0f) {
-                    UnityEngine.Object.Destroy(g);
+                if (distance < 6.0f){
+                    Object.Destroy(g);
                     return true;
                 }
             }

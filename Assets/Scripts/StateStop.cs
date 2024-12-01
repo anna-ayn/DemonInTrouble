@@ -15,8 +15,21 @@ public class StateStop : State
 
     public override void getActions()
     {
-        if (character.GetComponent<Agent>().kinematic.velocity.magnitude > 0.0f)
-            character.GetComponent<Agent>().kinematic.velocity = Vector3.zero;
+        character.GetComponent<Agent>().kinematic.velocity = Vector3.zero;
+
+        // destroy lines
+        GameObject[] lines = GameObject.FindGameObjectsWithTag("Line" + character.tag);
+        for (int i = 0; i < lines.Length; i++) {
+            Object.Destroy(lines[i]);
+        }
+
+        if (character.tag == "Pet") return;
+        GameObject[] linesOpt = GameObject.FindGameObjectsWithTag("LineOpt" + character.tag);        
+
+
+        for (int i = 0; i < linesOpt.Length; i++) {
+            Object.Destroy(linesOpt[i]);
+        }
         
         if (character.tag == "Player") {
             // pintarlo de azul
