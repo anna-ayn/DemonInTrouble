@@ -14,10 +14,6 @@ public class StateMachinePlayer : MonoBehaviour
     List<Transition> Tstop = new List<Transition>();
     List<Transition> TwalkToSearchGem = new List<Transition>();
     List<Transition> TarrivedHome = new List<Transition>();
-    // List<Transition> TSearchTrap = new List<Transition>();
-    // List<Transition> TFoundTrap = new List<Transition>();
-    // List<Transition> TRecollectedScroll = new List<Transition>();
-    // Dictionary<string, Transition> stateTransitions;
 
     public void Start()
     {
@@ -28,53 +24,23 @@ public class StateMachinePlayer : MonoBehaviour
         Transition stop = new TransitionToStop(gameObject);
         Transition walkToSearchGem = new TransitionWalkToSearchGem(gameObject);
         Transition arrivedHome = new TransitionArrivedHome(gameObject);
-        // Transition searchForTrap = new TransitionSearchForTrap(gameObject);
-        // Transition foundTrap = new TransitionFoundTrap(gameObject);
-        // Transition recollectedScroll = new TransitionRecollectedScroll();
-
-        //  // map: state -> transition
-        // stateTransitions = new Dictionary<string, Transition>()
-        // {
-        //     { "WalkRandomly", startWalking },
-        //     { "GoToHome", startGoToHome },
-        //     { "Stop", stop},
-        //     { "SearchGem", walkToSearchGem},
-        //     { "ArrivedHome", arrivedHome},
-        //     { "SearchForTrap", searchForTrap},
-        //     { "FoundTrap", foundTrap},
-        // };
 
         // si el jugador esta caminando aleatoriamente, puede ir a buscar una gema si esta cerca
         // o puede detenerse al encontrar un enemigo
-        // TstartWalking.Add(searchForTrap);
         TstartWalking.Add(walkToSearchGem);
         TstartWalking.Add(stop);
-
         // si el jugador esta buscando una gema, puede detenerse al encontrar un enemigo
         // tambien puede ir a su casa si encontro la gema
         TwalkToSearchGem.Add(stop);
-        // TwalkToSearchGem.Add(searchForTrap);
         TwalkToSearchGem.Add(startGoToHome);
-
         // si el jugador esta detenido, puede volver a caminar aleatoriamente si el enemigo se aleja
         Tstop.Add(startWalking);
         Tstop.Add(startGoToHome);
-
         // si el jugador va a su casa con su gema, se detiene al llegar
-        TstartGoToHome.Add(stop);
-        // TstartGoToHome.Add(searchForTrap);
         TstartGoToHome.Add(arrivedHome);
-
+        TstartGoToHome.Add(stop);
         // si el jugador esta en su casa, puede volver a caminar aleatoriamente
         TarrivedHome.Add(startWalking);
-
-        // TSearchTrap.Add(foundTrap);
-
-        // // al encontrar una trampa, se verifica si se recolecto el scroll o no
-        // TFoundTrap.Add(recollectedScroll);
-
-        // TRecollectedScroll.Add(searchForTrap);
-    
 
         // Creates States
         StateWalk walkState = new StateWalk(gameObject, TstartWalking);
@@ -82,20 +48,16 @@ public class StateMachinePlayer : MonoBehaviour
         StateSearchGem walkToSearchGemState = new StateSearchGem(gameObject, TwalkToSearchGem);
         StateToHome goToHomeState = new StateToHome(gameObject, TstartGoToHome);
         StateArrivedHome arrivedHomeState = new StateArrivedHome(gameObject, TarrivedHome);
-        // StateSearchForTrap searchForTrapState = new StateSearchForTrap(gameObject, TSearchTrap);
-        // StateFoundTrap foundTrapState = new StateFoundTrap(gameObject, TFoundTrap);
+        
 
         states.Add(walkState);
         states.Add(stopState);
         states.Add(walkToSearchGemState);
         states.Add(goToHomeState);
         states.Add(arrivedHomeState);
-        // states.Add(searchForTrapState);
-        // states.Add(foundTrapState);
 
         initialState = walkState; // walking randomly as initialstate
         currentState = initialState;
-
     }
 
     // Checks and applies transitions, returning a list of actions.
@@ -112,14 +74,6 @@ public class StateMachinePlayer : MonoBehaviour
             if (transition.isTriggered())
                 {
                     triggered = transition;
-                    // if (triggered.getTargetState() == "SearchForTrap" && currentState.nameState != "FoundTrap") {
-                    //     if (TFoundTrap.Count == 2) {
-                    //         TFoundTrap.Add(stateTransitions[currentState.nameState]);
-                    //     } else {
-                    //         TFoundTrap[2] = stateTransitions[currentState.nameState];
-                    //     }
-                    //     states[6] = new StateFoundTrap(gameObject, TFoundTrap);
-                    // }
                     break;        
                 }
         }
