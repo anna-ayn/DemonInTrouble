@@ -115088,12 +115088,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677744041}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93b0de52ea4e81d4782ca8ff4bd760b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphObject: {fileID: 0}
   target: {fileID: 677744041}
   character: {fileID: 677744042}
   random_target: 0
@@ -115106,7 +115105,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677744041}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fd0eb36f1c742fe4c9a6eb711e03e14c, type: 2}
   m_CullingMode: 0
@@ -115126,7 +115125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677744041}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf0bc81560e87b14bac6781eb763dad4, type: 3}
   m_Name: 
@@ -115138,7 +115137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677744041}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e75730d8193d88540942aba6732861a8, type: 3}
   m_Name: 
@@ -116575,7 +116574,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b0de52ea4e81d4782ca8ff4bd760b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphObject: {fileID: 0}
   target: {fileID: 1335641559}
   character: {fileID: 1335641566}
   random_target: 1
@@ -117608,7 +117606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b0de52ea4e81d4782ca8ff4bd760b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  graphObject: {fileID: 0}
   target: {fileID: 1605364547}
   character: {fileID: 1605364548}
   random_target: 0

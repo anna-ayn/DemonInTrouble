@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\State.cs" />
     <Compile Include="Assets\Scripts\PathFindCharacter.cs" />
     <Compile Include="Assets\Scripts\StateToHome.cs" />
+    <Compile Include="Assets\Scripts\pathFindTactical2.cs" />
     <Compile Include="Assets\Scripts\Separation.cs" />
     <Compile Include="Assets\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\ArriveMain.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="Assets\Scripts\NodeRecord.cs" />
     <Compile Include="Assets\Scripts\AgentTeleport.cs" />
     <Compile Include="Assets\Scripts\Agent.cs" />
+    <Compile Include="Assets\Scripts\pathFindTacticalMain2.cs" />
     <Compile Include="Assets\Scripts\Graph.cs" />
     <Compile Include="Assets\Scripts\BagController.cs" />
     <Compile Include="Assets\Scripts\Wander.cs" />
