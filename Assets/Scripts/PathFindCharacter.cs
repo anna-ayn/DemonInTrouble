@@ -88,9 +88,7 @@ public class PathFindCharacter : MonoBehaviour
                 // destruir las lineas del camino optimo
                 GameObject[] linesOpt = GameObject.FindGameObjectsWithTag("LineOpt" + character.gameObject.tag);
                 foreach (GameObject line in linesOpt)
-                {
                     Destroy(line);
-                }
             }
 
             // conseguir un nuevo nodo aleatorio si llego al destino
