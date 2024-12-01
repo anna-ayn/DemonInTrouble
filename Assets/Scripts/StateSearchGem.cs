@@ -26,7 +26,7 @@ public class StateSearchGem: State
             for (int i = 0; i < gems.Length; i++)
             {
                 float distance = Vector3.Distance(gems[i].transform.position, character.transform.position);
-                if (distance < 30.0f)
+                if (distance < 50.0f)
                 {
                     gem_id = i;
                     character.GetComponent<PathFindCharacter>().target = gems[i];
