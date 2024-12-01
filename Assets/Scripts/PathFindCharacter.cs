@@ -1,35 +1,38 @@
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class PathFindCharacter : MonoBehaviour
 {
-    public GameObject graphObject;
     public GameObject target;
     public Agent character;
     public Graph graph;
     public bool random_target; // si esta deambulando o ya tiene pensado ir a un lugar
     public Node targetNode; // el lugar que quiere ir
-    public Node beforeTargetNode; // el lugar que queria ir antes de cambiar de objetivo
     PathFind algorithm;
 
-    public List<Node> path;
+    public List<Node> path = new List<Node>();
 
     public float maxAcceleration;
 
     private void Awake()
     {
-        // esperar 1 segundo para inicializar el grafo
         character.Initialize();
-
         graph = new Graph();
         graph.CreateNodes();
         graph.ConnectNodes();
-        graph.setNodesScroll();
+        Debug.Log("Grafo creado para el " + character.gameObject.tag);
 
         algorithm = new PathFind();
         algorithm.graph = graph;
         algorithm.maxAcceleration = maxAcceleration;    
+
+        if (random_target)
+        {
+            int randomIndex = Random.Range(0, graph.Nodes.Count);
+            targetNode = graph.Nodes[randomIndex];
+        } else {
+            targetNode = graph.FindCube(target.transform.position);
+        }
     }
    
     
@@ -39,21 +42,28 @@ public class PathFindCharacter : MonoBehaviour
         algorithm.character = character.kinematic;
         algorithm.start = graph.FindCube(character.kinematic.position);
 
-        if (path == null) {
-            if (!random_target && target != null)
+        // si ya llego al nodo objetivo aleatorio
+        if (path.Count == 0 || Vector3.Distance(character.kinematic.position, targetNode.getCube().transform.position) < 0.1f)
+        {
+            // conseguir un nuevo nodo aleatorio
+            if (random_target)
             {
-                targetNode = graph.FindCube(target.transform.position);
+                int randomIndex = Random.Range(0, graph.Nodes.Count);
+                targetNode = graph.Nodes[randomIndex];
             }
-
-            algorithm.goal = targetNode;
-            path = algorithm.pathFindAStar(new Heuristic(algorithm.goal));
-
-            beforeTargetNode = targetNode;
         }
 
-        if (beforeTargetNode != null && beforeTargetNode != targetNode) {
-            path = algorithm.pathFindAStar(new Heuristic(algorithm.goal));
+        if (!random_target)
+        {
+            targetNode = graph.FindCube(target.transform.position);
         }
+
+        if (gameObject.tag == "Player") {
+            Debug.Log("Nodo objetivo: " + targetNode.getCube().name);
+        }
+
+        algorithm.goal = targetNode;
+        path = algorithm.pathFindAStar(new Heuristic(algorithm.goal));
 
         if (path.Count > 0) {
             
@@ -78,8 +88,8 @@ public class PathFindCharacter : MonoBehaviour
                 GameObject lineObject = new GameObject("Line" + lineCharacter);
                 lineObject.tag = "Line" + lineCharacter;
                 LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
-                lineRenderer.startWidth = 0.3f;
-                lineRenderer.endWidth = 0.3f;
+                lineRenderer.startWidth = 0.1f;
+                lineRenderer.endWidth = 0.1f;
                 lineRenderer.positionCount = 2;
                 lineRenderer.SetPosition(0, path[j].getCube().transform.position);
                 lineRenderer.SetPosition(1, path[j + 1].getCube().transform.position);
@@ -92,16 +102,16 @@ public class PathFindCharacter : MonoBehaviour
                     lineRenderer.startColor = Color.blue;
                     lineRenderer.endColor = Color.blue;
                 } else if (character.gameObject.tag == "Pet") {
-                    lineRenderer.startColor = Color.black;
-                    lineRenderer.endColor = Color.black;
+                    lineRenderer.startColor = Color.white;
+                    lineRenderer.endColor = Color.white;
                 }
             }
             // una linea del ultimo nodo al personaje
             GameObject lineObject2 = new GameObject("Line" + lineCharacter);
             lineObject2.tag = "Line" + lineCharacter;
             LineRenderer lineRenderer2 = lineObject2.AddComponent<LineRenderer>();
-            lineRenderer2.startWidth = 0.3f;
-            lineRenderer2.endWidth = 0.3f;
+            lineRenderer2.startWidth = 0.1f;
+            lineRenderer2.endWidth = 0.1f;
             lineRenderer2.positionCount = 2;
             lineRenderer2.SetPosition(0, path[path.Count - 1].getCube().transform.position);
             lineRenderer2.SetPosition(1, character.kinematic.position);
@@ -115,8 +125,8 @@ public class PathFindCharacter : MonoBehaviour
                 lineRenderer2.endColor = Color.blue;
             }
              else if (character.gameObject.tag == "Pet") {
-                lineRenderer2.startColor = Color.black;
-                lineRenderer2.endColor = Color.black;
+                lineRenderer2.startColor = Color.white;
+                lineRenderer2.endColor = Color.white;
             }
 
             character.steering = algorithm.getSteering(path[path.Count - 1]);
