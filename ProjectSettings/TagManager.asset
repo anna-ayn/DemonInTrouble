@@ -68,11 +68,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3968795653
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 3968795653
+  - name: Cubes
+    uniqueID: 2643357705
     locked: 0
   - name: Target
     uniqueID: 2627539077

@@ -14,11 +14,5 @@ public class NodesVisualization : MonoBehaviour
         graph.setNodesScroll();
     }
 
-    public void Awake()
-    {
-        graph = new Graph();
-        graph.CreateNodes();
-        graph.DrawNodes();
-    }
 
 }
