@@ -18,7 +18,8 @@ public class StatePursuePlayer : State
     {
         character.GetComponent<PathFindCharacter>().random_target = false;
         GameObject player = GameObject.Find("Player");
-        character.GetComponent<PathFindCharacter>().target = player;
+        Graph graph = character.GetComponent<PathFindCharacter>().graph;
+        character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(player.transform.position);
     }
 
     public override void getEntryActions()

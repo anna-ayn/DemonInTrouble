@@ -24,7 +24,7 @@ public class PathFindTactical
     // pathFindAStar function
     public List<Node> pathFindAStar(Heuristic heuristic) {
         Debug.Log("Iniciando pathFindAStar... con startNode: " + start.getCube().name + " con goalNode: " + goal.getCube().name);
-        
+  
         // Initialize the record for the start node.
         NodeRecord startRecord = new NodeRecord();
         startRecord.node = start;
@@ -88,12 +88,9 @@ public class PathFindTactical
 
                 NodeRecord endNodeRecord = null;
 
-                Debug.Log("From node " + current.node.getCube().name + " to node " + endNode.getCube().name + " with cost " + endNodeCost);
-
                 // If the node is closed we may have to skip, or remove it
                 // from the closed list.
                 if (closed.contains(endNode)) {
-                    Debug.Log("Node " + endNode.getCube().name + " is in closed list");
                     // Here we find the record in the closed list.
                     // corresponding to the endNode.
                     endNodeRecord = closed.find(endNode);
@@ -101,8 +98,6 @@ public class PathFindTactical
                     // If we didnt find a shorter route, skip.
                     if (endNodeRecord.costSoFar <= endNodeCost) continue;
 
-                    Debug.Log("Nodo NO ignorado");
-                    
                     // Otherwise, remove it from the closed list.
                     closed.remove(endNodeRecord);
 
@@ -114,7 +109,6 @@ public class PathFindTactical
                 
                 // Skip if the node is open and we've not found a better route
                 else if (open.contains(endNode)) {
-                    Debug.Log("Node " + endNode.getCube().name + " is in open list");
                     // Here we find the record in the open list
                     // corresponding to the endNode
                     endNodeRecord = open.find(endNode);
@@ -122,7 +116,6 @@ public class PathFindTactical
                     // If our route is no better, then skip
                     if (endNodeRecord.costSoFar <= endNodeCost && current.advantagePoints <= endNodeRecord.advantagePoints) continue;
                     
-                    Debug.Log("Nodo NO ignorado " + current.advantagePoints + " " + endNodeRecord.advantagePoints);
                     // Again, we can calculate its heuristic
                     endNodeHeuristic = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar;
 

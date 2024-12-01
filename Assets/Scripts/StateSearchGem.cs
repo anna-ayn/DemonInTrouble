@@ -19,6 +19,7 @@ public class StateSearchGem: State
 
     public override void getActions()
     {
+        Graph graph = character.GetComponent<PathFindCharacter>().graph;
         GameObject[] gems = GameObject.FindGameObjectsWithTag("Gem");
         if (gem_id == -1) {
             character.GetComponent<PathFindCharacter>().random_target = false;
@@ -29,12 +30,12 @@ public class StateSearchGem: State
                 if (distance < 50.0f)
                 {
                     gem_id = i;
-                    character.GetComponent<PathFindCharacter>().target = gems[i];
+                    character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(gems[i].transform.position);
                     return;
                 }
             }
         }
-        character.GetComponent<PathFindCharacter>().target = gems[gem_id];
+        character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(gems[gem_id].transform.position);
         return;
     }
 

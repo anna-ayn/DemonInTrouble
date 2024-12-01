@@ -19,7 +19,8 @@ public class StateScareEnemy : State
         character.GetComponent<PathFindCharacter>().random_target = false;
         // Asignar el enemigo como objetivo
         GameObject enemy = GameObject.Find("Enemy");
-        character.GetComponent<PathFindCharacter>().target = enemy;
+        Graph graph = character.GetComponent<PathFindCharacter>().graph;
+        character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(enemy.transform.position);
     }
 
     public override void getEntryActions()

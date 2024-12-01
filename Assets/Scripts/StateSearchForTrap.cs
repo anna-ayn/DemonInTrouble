@@ -18,6 +18,7 @@ public class StateSearchForTrap: State
 
     public override void getActions()
     {
+        Graph graph = character.GetComponent<PathFindCharacter>().graph;
         GameObject[] traps = GameObject.FindGameObjectsWithTag("Scroll");
         if (trap_id == -1) {
             character.GetComponent<PathFindCharacter>().random_target = false;
@@ -28,12 +29,12 @@ public class StateSearchForTrap: State
                 if (distance < 30.0f)
                 {
                     trap_id = i;
-                    character.GetComponent<PathFindCharacter>().target = traps[i];
+                    character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(traps[i].transform.position);
                     return;
                 }
             }
         }
-        character.GetComponent<PathFindCharacter>().target = traps[trap_id];
+        character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(traps[trap_id].transform.position);
         return;
     }
 

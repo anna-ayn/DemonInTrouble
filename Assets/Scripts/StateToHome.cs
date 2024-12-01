@@ -20,7 +20,8 @@ public class StateToHome : State
         character.GetComponent<PathFindCharacter>().random_target = false;
         // Asignar la casa del personaje como objetivo
         GameObject home = GameObject.FindGameObjectsWithTag(character.tag + "Home")[0];
-        character.GetComponent<PathFindCharacter>().target = home;
+        Graph graph = character.GetComponent<PathFindCharacter>().graph;
+        character.GetComponent<PathFindCharacter>().targetNode = graph.FindCube(home.transform.position);
         
         if (character.tag == "Player")
         {
