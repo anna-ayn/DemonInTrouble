@@ -82,8 +82,8 @@ public class Graph
 
             GameObject line = new GameObject("Line");
             LineRenderer lr = line.AddComponent<LineRenderer>();
-            lr.startWidth = 0.1f;
-            lr.endWidth = 0.1f;
+            lr.startWidth = 0.05f;
+            lr.endWidth = 0.05f;
             lr.positionCount = vertices.Length;
             lr.material = new Material(Shader.Find("Sprites/Default"));
             lr.startColor = Color.white;
@@ -92,6 +92,17 @@ public class Graph
             for (int i = 0; i < vertices.Length; i++) {
                 lr.SetPosition(i, node.getCube().transform.position + Vector3.Scale(vertices[i], offset));
             }
+        }
+    }
+
+    // setear los nodos a true que tienen scrolls
+    public void setNodesScroll() {
+        GameObject[] scrolls = GameObject.FindGameObjectsWithTag("Scroll");
+
+        foreach (GameObject scroll in scrolls)
+        {
+            Node n = FindCube(scroll.transform.position);
+            Nodes[n.getId()].setScroll(true);
         }
     }
 }

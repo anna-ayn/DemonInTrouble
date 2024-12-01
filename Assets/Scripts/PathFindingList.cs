@@ -10,13 +10,15 @@ public class PathFindingList {
         list = new List<NodeRecord>();
     }
 
-    // returns the NodeRecord structure in the list with the lowest costSoFar value.
+    // returns the NodeRecord structure in the list with the lowest costSoFar value and with most advantage points.
     public NodeRecord smallestElement() {
         NodeRecord smallest = list[0];
         foreach(NodeRecord n in list)
         {
-            if (n.costSoFar < smallest.costSoFar)
-                smallest = n;
+            if (n.advantagePoints > smallest.advantagePoints) smallest = n;
+            else if (n.advantagePoints == smallest.advantagePoints) {
+                if (n.costSoFar < smallest.costSoFar) smallest = n;
+            }
         }
         return smallest;
     }

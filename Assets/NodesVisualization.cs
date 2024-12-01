@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class NodesVisualization : MonoBehaviour
 {
-    Graph graph;
-    // Start is called before the first frame update
-    void Start()
+    public Graph graph;
+
+    public void Initialize()
     {
         graph = new Graph();
         graph.CreateNodes();
+        graph.ConnectNodes();
         graph.DrawNodes();
+        graph.setNodesScroll();
     }
 }

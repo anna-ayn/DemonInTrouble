@@ -11,4 +11,9 @@ public class NodeRecord
     public NodeRecord connection;
     public float costSoFar;
     public float estimatedTotalCost;
+    public int advantagePoints;
+
+    public NodeRecord() {
+        this.advantagePoints = 0;
+    }
 }

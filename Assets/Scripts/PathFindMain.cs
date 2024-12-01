@@ -44,7 +44,10 @@ public class PathFindMain : MonoBehaviour
         algorithm.character = character.kinematic;
         algorithm.start = graph.FindCube(character.kinematic.position);
 
-        path = algorithm.pathFindAStar(new Heuristic(algorithm.goal));
+        if (path.Count == 0) {
+            path = algorithm.pathFindAStar(new Heuristic(algorithm.goal));
+            if (path.Count == 0) return;
+        }
 
         if (path.Count > 0) {
 
@@ -61,20 +64,15 @@ public class PathFindMain : MonoBehaviour
                 GameObject lineObject = new GameObject("Line");
                 lineObject.tag = "Line";
                 LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
-                lineRenderer.startWidth = 0.1f;
-                lineRenderer.endWidth = 0.1f;
+                lineRenderer.startWidth = 0.3f;
+                lineRenderer.endWidth = 0.3f;
                 lineRenderer.positionCount = 2;
                 lineRenderer.SetPosition(0, path[j].getCube().transform.position);
                 lineRenderer.SetPosition(1, path[j + 1].getCube().transform.position);
                 lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-                lineRenderer.startColor = Color.red;
-                lineRenderer.endColor = Color.red;
+                lineRenderer.startColor = Color.blue;
+                lineRenderer.endColor = Color.blue;
             }
-
-            // move character to the first node
-            character.steering = algorithm.getSteering(path[path.Count - 1]);
-            character.doUpdate(maxAcceleration);
-
         }
     }
 }

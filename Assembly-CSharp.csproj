@@ -74,7 +74,6 @@
     <Compile Include="Assets\StopEnemyController.cs" />
     <Compile Include="Assets\ExclamationsController.cs" />
     <Compile Include="Assets\Scripts\TargetScript.cs" />
-    <Compile Include="Assets\Scripts\StateAlert.cs" />
     <Compile Include="Assets\Scripts\StateSearchForTrap.cs" />
     <Compile Include="Assets\Scripts\StateArrivedHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
@@ -84,14 +83,16 @@
     <Compile Include="Assets\Scripts\CollisionAvoidanceMain.cs" />
     <Compile Include="Assets\Scripts\TransitionStartGoToHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSteeringOutput.cs" />
-    <Compile Include="Assets\Scripts\TransitionAlert.cs" />
     <Compile Include="Assets\Scripts\FaceMain.cs" />
     <Compile Include="Assets\Scripts\Connection.cs" />
+    <Compile Include="Assets\Scripts\PathFindTacticalMain.cs" />
     <Compile Include="Assets\Scripts\AlignMain.cs" />
     <Compile Include="Assets\AnimationPlayerScript.cs" />
     <Compile Include="Assets\Scripts\WanderMain.cs" />
+    <Compile Include="Assets\Scripts\TransitionRecollectedScroll.cs" />
     <Compile Include="Assets\Scripts\StatePursuePlayer.cs" />
     <Compile Include="Assets\Scripts\TransitionToStartWalking.cs" />
+    <Compile Include="Assets\Scripts\pathFindTactical.cs" />
     <Compile Include="Assets\Scripts\StateScareEnemy.cs" />
     <Compile Include="Assets\Scripts\KinematicArrive.cs" />
     <Compile Include="Assets\NodesVisualization.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\Scripts\SeparationMain.cs" />
     <Compile Include="Assets\Scripts\StateMachineEnemy.cs" />
     <Compile Include="Assets\GemsRandom.cs" />
+    <Compile Include="Assets\Scripts\TransitionFoundTrap.cs" />
     <Compile Include="Assets\Scripts\Pursue.cs" />
     <Compile Include="Assets\Scripts\TransitionWalkToSearchGem.cs" />
     <Compile Include="Assets\Scripts\VelocityMatch.cs" />
