@@ -145,55 +145,55 @@ public class PathFindCharacter : MonoBehaviour
             lineCharacter = "Pet";
         }  
             
-        GameObject[] lines = GameObject.FindGameObjectsWithTag("Line" + lineCharacter);
-        foreach (GameObject line in lines)
-            Destroy(line);
+        // GameObject[] lines = GameObject.FindGameObjectsWithTag("Line" + lineCharacter);
+        // foreach (GameObject line in lines)
+        //     Destroy(line);
 
-        for (int j = 0; j < path.Count - 1; j++)
-        {
-            GameObject lineObject = new GameObject("Line" + lineCharacter);
-            lineObject.tag = "Line" + lineCharacter;
-            LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
-            lineRenderer.startWidth = 0.3f;
-            lineRenderer.endWidth = 0.3f;
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPosition(0, path[j].getCube().transform.position);
-            lineRenderer.SetPosition(1, path[j + 1].getCube().transform.position);
-            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-            if (character.gameObject.tag == "Player")
-            {
-                lineRenderer.startColor = Color.red;
-                lineRenderer.endColor = Color.red;
-            } else if (character.gameObject.tag == "Enemy") {
-                lineRenderer.startColor = Color.blue;
-                lineRenderer.endColor = Color.blue;
-            } else if (character.gameObject.tag == "Pet") {
-                lineRenderer.startColor = Color.white;
-                lineRenderer.endColor = Color.white;
-            }
-        }
-        // una linea del ultimo nodo al personaje
-        GameObject lineObject2 = new GameObject("Line" + lineCharacter);
-        lineObject2.tag = "Line" + lineCharacter;
-        LineRenderer lineRenderer2 = lineObject2.AddComponent<LineRenderer>();
-        lineRenderer2.startWidth = 0.3f;
-        lineRenderer2.endWidth = 0.3f;
-        lineRenderer2.positionCount = 2;
-        lineRenderer2.SetPosition(0, path[path.Count - 1].getCube().transform.position);
-        lineRenderer2.SetPosition(1, character.kinematic.position);
-        lineRenderer2.material = new Material(Shader.Find("Sprites/Default"));
-        if (character.gameObject.tag == "Player")
-        {
-            lineRenderer2.startColor = Color.red;
-            lineRenderer2.endColor = Color.red;
-        } else if (character.gameObject.tag == "Enemy") {
-            lineRenderer2.startColor = Color.blue;
-            lineRenderer2.endColor = Color.blue;
-        }
-            else if (character.gameObject.tag == "Pet") {
-            lineRenderer2.startColor = Color.white;
-            lineRenderer2.endColor = Color.white;
-        }
+        // for (int j = 0; j < path.Count - 1; j++)
+        // {
+        //     GameObject lineObject = new GameObject("Line" + lineCharacter);
+        //     lineObject.tag = "Line" + lineCharacter;
+        //     LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
+        //     lineRenderer.startWidth = 0.3f;
+        //     lineRenderer.endWidth = 0.3f;
+        //     lineRenderer.positionCount = 2;
+        //     lineRenderer.SetPosition(0, path[j].getCube().transform.position);
+        //     lineRenderer.SetPosition(1, path[j + 1].getCube().transform.position);
+        //     lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        //     if (character.gameObject.tag == "Player")
+        //     {
+        //         lineRenderer.startColor = Color.red;
+        //         lineRenderer.endColor = Color.red;
+        //     } else if (character.gameObject.tag == "Enemy") {
+        //         lineRenderer.startColor = Color.blue;
+        //         lineRenderer.endColor = Color.blue;
+        //     } else if (character.gameObject.tag == "Pet") {
+        //         lineRenderer.startColor = Color.white;
+        //         lineRenderer.endColor = Color.white;
+        //     }
+        // }
+        // // una linea del ultimo nodo al personaje
+        // GameObject lineObject2 = new GameObject("Line" + lineCharacter);
+        // lineObject2.tag = "Line" + lineCharacter;
+        // LineRenderer lineRenderer2 = lineObject2.AddComponent<LineRenderer>();
+        // lineRenderer2.startWidth = 0.3f;
+        // lineRenderer2.endWidth = 0.3f;
+        // lineRenderer2.positionCount = 2;
+        // lineRenderer2.SetPosition(0, path[path.Count - 1].getCube().transform.position);
+        // lineRenderer2.SetPosition(1, character.kinematic.position);
+        // lineRenderer2.material = new Material(Shader.Find("Sprites/Default"));
+        // if (character.gameObject.tag == "Player")
+        // {
+        //     lineRenderer2.startColor = Color.red;
+        //     lineRenderer2.endColor = Color.red;
+        // } else if (character.gameObject.tag == "Enemy") {
+        //     lineRenderer2.startColor = Color.blue;
+        //     lineRenderer2.endColor = Color.blue;
+        // }
+        //     else if (character.gameObject.tag == "Pet") {
+        //     lineRenderer2.startColor = Color.white;
+        //     lineRenderer2.endColor = Color.white;
+        // }
 
         if (character.gameObject.tag == "Player") {
             character.steering = algorithm.getSteering(path[path.Count - 1]);
@@ -204,48 +204,48 @@ public class PathFindCharacter : MonoBehaviour
         }
         character.doUpdate(maxAcceleration);
 
-        // visualizar el camino optimo
-        if (character.gameObject.tag == "Pet") return;
-        if (path_opt.Count == 0) return;
+        // // visualizar el camino optimo
+        // if (character.gameObject.tag == "Pet") return;
+        // if (path_opt.Count == 0) return;
 
-        for (int j = 0; j < path_opt.Count - 1; j++)
-        {
-            GameObject lineObject = new GameObject("LineOpt" + lineCharacter);
-            lineObject.tag = "LineOpt" + lineCharacter;
-            LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
-            lineRenderer.startWidth = 0.3f;
-            lineRenderer.endWidth = 0.3f;
-            lineRenderer.positionCount = 2;
-            lineRenderer.SetPosition(0, path_opt[j].getCube().transform.position);
-            lineRenderer.SetPosition(1, path_opt[j + 1].getCube().transform.position);
-            lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-            if (character.gameObject.tag == "Player")
-            {
-                lineRenderer.startColor = Color.yellow;
-                lineRenderer.endColor = Color.yellow;
-            } else if (character.gameObject.tag == "Enemy") {
-                lineRenderer.startColor = Color.black;
-                lineRenderer.endColor = Color.black;
-            } 
-        }
-        // una linea del ultimo nodo al personaje
-        GameObject lineObject3 = new GameObject("LineOpt" + lineCharacter);
-        lineObject3.tag = "LineOpt" + lineCharacter;
-        LineRenderer lineRenderer3 = lineObject3.AddComponent<LineRenderer>();
-        lineRenderer3.startWidth = 0.3f;
-        lineRenderer3.endWidth = 0.3f;
-        lineRenderer3.positionCount = 2;
-        lineRenderer3.SetPosition(0, path_opt[path_opt.Count - 1].getCube().transform.position);
-        lineRenderer3.SetPosition(1, startPosition);
-        lineRenderer3.material = new Material(Shader.Find("Sprites/Default"));
-        if (character.gameObject.tag == "Player")
-        {
-            lineRenderer3.startColor = Color.yellow;
-            lineRenderer3.endColor = Color.yellow;
-        } else if (character.gameObject.tag == "Enemy") {
-            lineRenderer3.startColor = Color.black;
-            lineRenderer3.endColor = Color.black;
-        } 
+        // for (int j = 0; j < path_opt.Count - 1; j++)
+        // {
+        //     GameObject lineObject = new GameObject("LineOpt" + lineCharacter);
+        //     lineObject.tag = "LineOpt" + lineCharacter;
+        //     LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
+        //     lineRenderer.startWidth = 0.3f;
+        //     lineRenderer.endWidth = 0.3f;
+        //     lineRenderer.positionCount = 2;
+        //     lineRenderer.SetPosition(0, path_opt[j].getCube().transform.position);
+        //     lineRenderer.SetPosition(1, path_opt[j + 1].getCube().transform.position);
+        //     lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
+        //     if (character.gameObject.tag == "Player")
+        //     {
+        //         lineRenderer.startColor = Color.yellow;
+        //         lineRenderer.endColor = Color.yellow;
+        //     } else if (character.gameObject.tag == "Enemy") {
+        //         lineRenderer.startColor = Color.black;
+        //         lineRenderer.endColor = Color.black;
+        //     } 
+        // }
+        // // una linea del ultimo nodo al personaje
+        // GameObject lineObject3 = new GameObject("LineOpt" + lineCharacter);
+        // lineObject3.tag = "LineOpt" + lineCharacter;
+        // LineRenderer lineRenderer3 = lineObject3.AddComponent<LineRenderer>();
+        // lineRenderer3.startWidth = 0.3f;
+        // lineRenderer3.endWidth = 0.3f;
+        // lineRenderer3.positionCount = 2;
+        // lineRenderer3.SetPosition(0, path_opt[path_opt.Count - 1].getCube().transform.position);
+        // lineRenderer3.SetPosition(1, startPosition);
+        // lineRenderer3.material = new Material(Shader.Find("Sprites/Default"));
+        // if (character.gameObject.tag == "Player")
+        // {
+        //     lineRenderer3.startColor = Color.yellow;
+        //     lineRenderer3.endColor = Color.yellow;
+        // } else if (character.gameObject.tag == "Enemy") {
+        //     lineRenderer3.startColor = Color.black;
+        //     lineRenderer3.endColor = Color.black;
+        // } 
         
     }
 

@@ -77,7 +77,9 @@
     <Compile Include="Assets\Scripts\StateSearchForTrap.cs" />
     <Compile Include="Assets\Scripts\StateArrivedHome.cs" />
     <Compile Include="Assets\Scripts\KinematicSeek.cs" />
+    <Compile Include="Assets\Scripts\FaceDirection.cs" />
     <Compile Include="Assets\Scripts\StateMachinePet.cs" />
+    <Compile Include="Assets\girarScript.cs" />
     <Compile Include="Assets\Scripts\StateSearchGem.cs" />
     <Compile Include="Assets\Scripts\VelocityMatchMain.cs" />
     <Compile Include="Assets\Scripts\CollisionAvoidanceMain.cs" />
@@ -147,7 +149,6 @@
     <None Include="Assets\UnityAssetStoreExports\Witchery AssetPack\Readme.txt" />
     <None Include="Assets\karsiori\Sprites\Pixel Art Gem Pack - Read Me.txt" />
     <None Include="Assets\Brown Rock Tileset\Readme.txt" />
-    <None Include="Assets\8Bit Music - 062022\Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
